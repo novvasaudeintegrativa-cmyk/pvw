@@ -885,3 +885,8 @@ h1,h2,h3,h4,.shead__h,.hs__head .h2,.band h2,.svb__h{letter-spacing:.02em;text-t
 .mapa__vp.zm{max-height:80vh;cursor:grab}
 #antes-depois .h2,#antes-depois .h2 em{font-size:clamp(2.2rem,5.6vw,3.6rem)!important}
 .hero .kicker{color:#fff!important}
+@media (min-width:960px){.xband__l{gap:0}.xband__l li{padding:0 32px}.xband__l li:first-child{padding-left:0}.xband__l li+li{border-left:1px solid rgba(255,255,255,.7)}}
+.xband__l p{font-size:1.35rem!important;line-height:1.35}
+.xband .xband__t,h3.xband__t{font-size:2.2rem!important}
+.xband__l .i{width:56px;height:56px}
+.xband__l li{grid-template-columns:64px 1fr}
