@@ -7,8 +7,11 @@
  */
 const fs = require("fs");
 const path = require("path");
+const crypto = require("crypto");
 
 const ROOT = path.resolve(__dirname, "..");
+/* versão (hash do conteúdo) nos links de CSS e JS: quando o arquivo muda, o navegador baixa de novo em vez de usar o cache */
+const ver = (f) => crypto.createHash("md5").update(fs.readFileSync(path.join(ROOT, f))).digest("hex").slice(0, 8);
 const read = (f) => JSON.parse(fs.readFileSync(path.join(ROOT, "data", f), "utf8"));
 const site = read("site.json");
 const conteudo = read("conteudo.json");
@@ -79,7 +82,7 @@ function head({ title, desc, canonical, image, jsonld, preload }) {
 <link rel="apple-touch-icon" href="${R}favicon-192.png">
 <link rel="preload" href="${R}fonts/Archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
 <script>document.documentElement.classList.add("js")</script>
-${preload || ""}<link rel="stylesheet" href="${R}css/style.css">
+${preload || ""}<link rel="stylesheet" href="${R}css/style.css?v=${ver("css/style.css")}">
 
 <!-- Consent Mode v2: tudo negado até o visitante aceitar o banner (como no site anterior) -->
 <script>
@@ -183,7 +186,7 @@ function footer(semCaixa) {
   </div>
 </div>
 <script>window.PVW=${JSON.stringify({ pixel: site.metaPixel })};</script>
-<script src="${R}js/main.js" defer></script>
+<script src="${R}js/main.js?v=${ver("js/main.js")}" defer></script>
 </body>
 </html>`;
 }
