@@ -35,6 +35,13 @@
     }
     load();
     if (mq.addEventListener) mq.addEventListener("change", load);
+    /* celular: o vídeo (pesado) só baixa quando a pessoa toca no botão de play */
+    var pl = $(".phone__play");
+    if (pl) pl.addEventListener("click", function () {
+      if (!v.getAttribute("data-ok")) { v.setAttribute("data-ok", "1"); v.src = v.getAttribute("data-src"); }
+      v.muted = false; var p = v.play(); if (p && p.catch) p.catch(function () {});
+      pl.hidden = true;
+    });
   })();
 
   /* ---------- depoimentos: botões da rolagem horizontal ---------- */
@@ -272,6 +279,21 @@
   /* ---------- mapa: o bairro da lista acende no mapa ---------- */
   (function () {
     var mapa = $("#mapa"); if (!mapa) return;
+    var vp = $(".mapa__vp", mapa);
+    if (vp) {
+      /* no celular o mapa é mais largo que a tela: abre na Zona Sul e navega com setas ou arrastando */
+      var ini = function () { vp.scrollLeft = vp.scrollWidth; };
+      ini(); window.addEventListener("load", ini);
+      $$(".mapa__btn", mapa).forEach(function (b) {
+        b.addEventListener("click", function () {
+          vp.scrollBy({ left: parseInt(b.getAttribute("data-dir"), 10) * Math.round(vp.clientWidth * 0.7), behavior: reduce ? "auto" : "smooth" });
+        });
+      });
+      var dn = false, sx = 0, sl = 0;
+      vp.addEventListener("pointerdown", function (e) { if (e.pointerType !== "mouse") return; dn = true; sx = e.clientX; sl = vp.scrollLeft; });
+      window.addEventListener("pointermove", function (e) { if (dn) vp.scrollLeft = sl - (e.clientX - sx); });
+      window.addEventListener("pointerup", function () { dn = false; });
+    }
     $$(".mapa__list li").forEach(function (li) {
       function on(v) { var g = mapa.querySelector('.mp[data-n="' + li.textContent + '"]'); if (g) g.classList.toggle("on", v); }
       li.addEventListener("mouseenter", function () { on(true); });

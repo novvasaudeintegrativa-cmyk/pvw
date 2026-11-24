@@ -16,6 +16,8 @@ const read = (f) => JSON.parse(fs.readFileSync(path.join(ROOT, "data", f), "utf8
 const site = read("site.json");
 const conteudo = read("conteudo.json");
 const { tipos, obras } = read("obras.json");
+/* obras com "mosaico": false têm página própria, mas não aparecem no mosaico da home nem em "Outras obras" */
+const obrasHome = obras.filter((o) => o.mosaico !== false);
 
 const esc = (s) => String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 const exists = (p) => fs.existsSync(path.join(ROOT, p));
@@ -233,8 +235,8 @@ function cardObra(o, linkPrefix, tam) {
 function home() {
   R = "";
   const c = conteudo;
-  const bairros = [...new Set(obras.map((o) => o.bairro).filter(Boolean))].sort((a, b) => a.localeCompare(b, "pt-BR"));
-  const tiposUsados = Object.keys(tipos).filter((t) => obras.some((o) => o.tipos.includes(t)));
+  const bairros = [...new Set(obrasHome.map((o) => o.bairro).filter(Boolean))].sort((a, b) => a.localeCompare(b, "pt-BR"));
+  const tiposUsados = Object.keys(tipos).filter((t) => obrasHome.some((o) => o.tipos.includes(t)));
   const title = `Reformas e Construção no Rio de Janeiro | ${site.nome}`;
   const desc = "Aqui na PVW Construção e Reformas nós transformamos sonhos em realidade com qualidade e compromisso absoluto com os prazos acordados.";
   const ld = {
@@ -263,6 +265,7 @@ function home() {
         <span class="phone__btn phone__btn--a" aria-hidden="true"></span><span class="phone__btn phone__btn--b" aria-hidden="true"></span><span class="phone__btn phone__btn--c" aria-hidden="true"></span>
         <div class="phone__screen">
           <video id="hero-video" muted loop playsinline controls preload="none" poster="img/obras/video-obra-impecavel.webp" data-src="video/VideoObraImpecavel.mp4" aria-label="Vídeo de uma obra da PVW"></video>
+          <button type="button" class="phone__play" aria-label="Reproduzir o vídeo da obra"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></button>
           <span class="phone__notch" aria-hidden="true"></span>
           <span class="phone__tag">Obra real</span>
         </div>
@@ -285,10 +288,10 @@ function home() {
       <div class="chips" id="f-tipos"><button type="button" class="chip" data-tipo="" aria-pressed="true">Todos</button>${tiposUsados.map((t) => `<button type="button" class="chip" data-tipo="${t}" aria-pressed="false">${esc(tipos[t])}</button>`).join("")}</div>
       <button type="button" class="chip chip--sh" id="f-shuffle" aria-label="Misturar a ordem e o tamanho das fotos">Misturar</button>
     </div>
-    <p class="count" id="f-count" role="status" aria-live="polite">${obras.length} obras</p>
+    <p class="count" id="f-count" role="status" aria-live="polite">${obrasHome.length} obras</p>
     <div class="omos">
       <div class="ogrid" id="ogrid">
-        ${obras.map((o, i) => cardObra(o, "", MOSAICO[i % MOSAICO.length])).join("\n        ")}
+        ${obrasHome.map((o, i) => cardObra(o, "", MOSAICO[i % MOSAICO.length])).join("\n        ")}
       </div>
     </div>
     <p class="empty" id="f-vazio" hidden>Nenhuma obra com esses filtros.</p>
@@ -302,14 +305,19 @@ function home() {
       <div class="shead__t sobre__h"><h2 class="shead__h">Sobre nós</h2><p class="shead__s">Quem somos</p></div>
       ${c.intro.map((p) => `<p>${esc(p)}</p>`).join("")}
       <p>Somos uma empresa só para cuidar da sua obra: a gente coordena os profissionais, acompanha cada etapa e mantém você informada do começo ao fim. Você não precisa correr atrás de pedreiro, eletricista, pintor ou gesseiro: fala com a PVW e a PVW resolve.</p>
-      <div class="sobre__nums">
-        <div><b class="num" data-count="${site.numeros.anos}">+${site.numeros.anos}</b><span>Anos de experiência</span></div>
-        <div><b class="num" data-count="${site.numeros.m2}" data-suffix="m²">+${nf(site.numeros.m2)}m²</b><span>Construídos</span></div>
-        <div><b class="num" data-count="${site.numeros.projetos}">+${site.numeros.projetos}</b><span>Projetos entregues</span></div>
-      </div>
-      <ul class="sobre__selos">${c.selos.map((x) => `<li>${ICONS.check}${esc(x)}</li>`).join("")}</ul>
     </div>
-    <figure class="pessoas"><img src="img/obras/sobre-pessoas.webp" width="785" height="592" loading="lazy" decoding="async" alt="Engenheiro e arquiteta analisando uma planta de obra"><span class="tag tag--ph">Foto ilustrativa</span></figure>
+    <figure class="sobre__foto"><img src="img/obras/sobre-obra.webp" width="1400" height="1400" loading="lazy" decoding="async" alt="Equipe da obra reunida em volta de uma planta, em uma obra de alvenaria"><span class="tag tag--ph">Imagem ilustrativa</span></figure>
+  </div>
+</section>
+
+<section class="stats" aria-label="Números da PVW">
+  <div class="wrap">
+    <div class="stats__grid">
+      <div class="stats__i"><b class="num" data-count="${site.numeros.anos}">+${site.numeros.anos}</b><span>Anos de experiência</span></div>
+      <div class="stats__i"><b class="num" data-count="${site.numeros.m2}" data-suffix="m²">+${nf(site.numeros.m2)}m²</b><span>Construídos</span></div>
+      <div class="stats__i"><b class="num" data-count="${site.numeros.projetos}">+${site.numeros.projetos}</b><span>Projetos entregues</span></div>
+    </div>
+    <ul class="stats__selos">${c.selos.map((x) => `<li>${ICONS.check}${esc(x)}</li>`).join("")}</ul>
   </div>
 </section>
 
@@ -319,12 +327,13 @@ function home() {
       <div class="shead__t"><h2 class="shead__h">Onde atendemos</h2><p class="shead__s">Rio de Janeiro e Niterói</p></div>
       <div class="shead__d"><p>Atendemos ${c.area.regioes.map(esc).join(", ")}. Veja no mapa os bairros onde a PVW atua.</p></div>
     </div>
-    <div class="mapa" id="mapa">${mapaSvg()}</div>
+    <div class="mapa" id="mapa"><div class="mapa__vp" tabindex="0" aria-label="Mapa (arraste para o lado)">${mapaSvg()}</div>
+      <div class="mapa__nav"><button type="button" class="mapa__btn mapa__btn--prev" data-dir="-1" aria-label="Mapa para a esquerda">${ICONS.arrow}</button><span>Arraste ou use as setas</span><button type="button" class="mapa__btn" data-dir="1" aria-label="Mapa para a direita">${ICONS.arrow}</button></div></div>
   </div>
 </section>
 
 <section class="split" id="processo">
-  <div class="split__img"><img src="img/ilustracao-obra.svg" width="720" height="900" loading="lazy" decoding="async" alt="Ilustração de uma casa em obra, com andaime e régua, no estilo de planta técnica"></div>
+  <div class="split__img"><img src="img/obras/processo-obra.webp" width="1400" height="1400" loading="lazy" decoding="async" alt="Engenheiro com prancheta conversando com a cliente, enquanto pintores trabalham na reforma ao fundo"><span class="tag tag--ph">Imagem ilustrativa</span></div>
   <div class="split__panel">
     <div class="split__in">
       <h2 class="h2">Reformar nunca foi tão fácil</h2>
@@ -434,7 +443,7 @@ function paginaObra(o, i) {
   const galeria = o.galeria.length ? o.galeria.map((g) => `<figure>${pic(g, o.titulo, 800, 600)}</figure>`).join("") : [1, 2, 3].map(() => ph("Foto a inserir")).join("");
   const antesDepois = `<div class="ba2">${ph("Foto do antes: a inserir")}${ph("Foto do depois: a inserir")}</div>`;
   const videos = o.videos.length ? `<h2 class="h2 h2--s">Etapas da obra</h2><div class="vids">${o.videos.map((v) => `<figure><video controls preload="none" poster="${R}${v.poster}" playsinline><source src="${R}${v.src}" type="video/mp4"></video><figcaption>${esc(v.legenda)}</figcaption></figure>`).join("")}</div>` : "";
-  const outras = obras.filter((x) => x.slug !== o.slug).slice(0, 3);
+  const outras = obrasHome.filter((x) => x.slug !== o.slug).slice(0, 3);
   const status = o.status === "real" ? '<span class="tag tag--real tag--inline">Obra real</span>' : '<span class="tag tag--ph tag--inline">Foto e dados ilustrativos</span>';
   const html = [];
   html.push(head({

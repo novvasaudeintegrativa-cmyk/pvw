@@ -11,6 +11,7 @@
   "obras": [
     {
       "slug": "muro-de-divisa",
+      "mosaico": false,
       "titulo": "Muro de divisa de terreno com fissuras e inclinação de 15°",
       "bairro": "",
       "tipos": [

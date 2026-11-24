@@ -764,3 +764,69 @@ main{background-image:var(--grade);background-size:var(--grade-t)}
 .band{background:var(--blue)}
 .band .btn--cta{background:#fff;color:var(--blue)}
 .band .btn--cta:hover{background:var(--ice);color:var(--blue-d)}
+
+/* Sobre nós: foto da obra ocupando toda a coluna da direita */
+.sec--azul::before,.sec--azul::after{display:none!important}
+.sobre__foto{position:relative;margin:24px 0 0;width:100%}
+.sobre__foto img{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover}
+.sobre__foto .tag{right:10px;left:auto;top:10px;z-index:3}
+@media (min-width:960px){
+  .sec--azul{padding-bottom:0}
+  .sec--azul .sobre{grid-template-columns:1fr}
+  .sec--azul .sobre__txt{max-width:calc(50% - 24px);padding-bottom:64px}
+  .sobre__foto{position:absolute;top:0;bottom:0;left:50%;right:0;margin:0;width:auto}
+  .sobre__foto img{height:100%;aspect-ratio:auto}
+}
+@media (min-width:960px){.sec--azul .sobre{position:static;z-index:auto}.sec--azul .sobre__txt{position:relative;z-index:2}}
+
+/* Reformar nunca foi tão fácil: foto ocupando toda a coluna da esquerda */
+.split__img img{object-position:62% center}
+.split__img .tag{left:12px;top:12px;z-index:3}
+.split__img img{object-position:90% center}
+.split__img img{object-position:62% center}
+
+/* números em faixa própria: três colunas separadas por linhas verticais */
+.stats{background:var(--blue);color:#fff;padding:48px 0 40px}
+.stats__grid{display:grid;grid-template-columns:repeat(3,1fr)}
+.stats__i{display:flex;flex-direction:column;align-items:center;text-align:center;padding:6px 12px}
+.stats__i+.stats__i{border-left:1px solid rgba(255,255,255,.8)}
+.stats__i b{font-weight:800;font-size:clamp(1.7rem,6.2vw,3.6rem);line-height:1}
+.stats__i span{margin-top:8px;font-size:clamp(.78rem,2.4vw,1rem);color:#e6eaff}
+.stats__selos{display:grid;grid-template-columns:1fr 1fr;gap:12px 20px;margin-top:34px;padding-top:26px;border-top:1px solid rgba(255,255,255,.35);font-weight:600;font-size:.95rem}
+.stats__selos li{display:flex;gap:8px;align-items:flex-start}
+.stats__selos .i{color:#fff;margin-top:2px}
+@media (min-width:800px){.stats__selos{grid-template-columns:repeat(4,auto);justify-content:space-between}}
+
+/* mapa no celular: desenho mais largo que a tela, com nomes dos bairros, setas e arrastar */
+.mapa__vp{overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;cursor:grab}
+.mapa__vp::-webkit-scrollbar{display:none}
+.mapa__svg{width:1200px;max-width:none;height:auto}
+.mapa__nav{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:14px;font-size:.85rem;color:var(--mut)}
+.mapa__btn{display:grid;place-items:center;width:48px;height:48px;border:2px solid var(--ink);background:#fff;color:var(--ink);cursor:pointer;border-radius:50%}
+.mapa__btn--prev .i{transform:rotate(180deg)}
+.mapa__btn:hover{background:var(--blue);border-color:var(--blue);color:#fff}
+@media (max-width:959px){.mp__t,.mp__l{display:block!important}}
+@media (min-width:960px){.mapa__svg{width:100%}.mapa__nav{display:none}.mapa__vp{cursor:default}}
+
+/* hero no celular: o vídeo aparece abaixo do texto e só carrega ao tocar em play */
+.phone__play{display:none}
+@media (max-width:959px){
+  .hero__phone{display:flex;flex-direction:column;align-items:center;margin-top:28px;padding-bottom:8px}
+  .hero__phone .phone{width:min(230px,64vw)}
+  .phone__play{display:grid;place-items:center;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:5;width:68px;height:68px;border:0;border-radius:50%;background:var(--blue);color:#fff;cursor:pointer;box-shadow:0 8px 24px rgba(0,0,0,.4)}
+  .phone__play svg{width:34px;height:34px;margin-left:3px}
+  .phone__play[hidden]{display:none}
+}
+
+/* hero no celular: fundo mais escuro para o texto pequeno ler bem */
+@media (max-width:959px){
+  .hero::after{background:linear-gradient(0deg,rgba(14,17,22,.94) 0%,rgba(14,17,22,.78) 60%,rgba(14,17,22,.62) 100%)}
+  .kicker{color:#cfd8ff}
+}
+.stats__i{min-width:0;padding:6px 4px}
+.stats__i b{font-size:clamp(1.25rem,5.4vw,3.6rem);white-space:nowrap}
+@media (max-width:420px){.stats__i b{font-size:5.1vw}}
+.ft__item>div{min-width:0}
+.ft__item a,.ft__item p{overflow-wrap:anywhere}
+@media (max-width:359px){.ft__item{grid-template-columns:36px 1fr;gap:10px}.ft__item>.i{width:32px;height:32px}.stats__i b{font-size:4.8vw}}
+@media (max-width:959px){.phone__cap{max-width:100%;flex-wrap:wrap;gap:6px 12px}}
