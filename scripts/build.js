@@ -392,7 +392,6 @@ function home() {
     <div class="hscroll tq4" tabindex="0" role="region" aria-label="Depoimentos de clientes (role para o lado)">
       ${c.depoimentos.map((d) => `<figure class="tq4__c"><img class="tq4__ph" src="img/dep-${d.foto}-lg.webp" width="378" height="378" loading="lazy" alt="Foto de ${esc(d.nome)}"><span class="tq4__q"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 17h4l2-4V7H5v6h3zm9 0h4l2-4V7h-6v6h3z"/></svg></span><blockquote><p>${esc(d.texto)}</p></blockquote><figcaption><b>${esc(d.nome)}</b><span>${esc(d.profissao)}</span>${d.obra ? `<em>${esc(d.obra)}</em>` : ""}</figcaption></figure>`).join("\n      ")}
     </div>
-    ${sociais()}
   </div>
 </section>
 

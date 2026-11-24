@@ -728,3 +728,39 @@ ul,ol{padding:0;list-style:none}
 .ft__more{border-bottom-color:#fff}
 .ft{display:flow-root;position:relative}
 .ft__box{margin-top:-62px;z-index:2}
+
+/* quadriculado pequeno e bem suave, azul, em todos os fundos claros */
+:root{--grade:linear-gradient(rgba(42,69,235,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(42,69,235,.07) 1px,transparent 1px);--grade-t:22px 22px}
+main{background-image:var(--grade);background-size:var(--grade-t)}
+.sec--ice,.svb,.contato,.pin{background-image:var(--grade);background-size:var(--grade-t)}
+
+/* Sobre nós: coluna da direita (foto) em fundo claro com quadriculado */
+.sec--azul{position:relative}
+.pessoas{background-image:var(--grade);background-size:var(--grade-t);background-color:var(--ice)}
+.pessoas::after{display:none}
+@media (min-width:960px){
+  .sec--azul::before{content:"";position:absolute;top:0;bottom:0;left:50%;right:0;background-color:var(--ice);background-image:var(--grade);background-size:var(--grade-t)}
+  .pessoas{background:none;width:112%;margin-left:0;justify-self:start;position:relative;z-index:1}
+  .sec--azul .sobre__txt{z-index:2}
+}
+
+/* Sobre nós: construção de casa bem embaçada ao fundo, atrás das pessoas */
+.sec--azul .sobre{position:relative;z-index:1}
+.pessoas::before{content:"";position:absolute;inset:0;z-index:-1;background:url("../img/svc-alvenaria.webp") center 25%/cover no-repeat;filter:blur(9px);opacity:.3;clip-path:inset(0)}
+.pessoas{isolation:isolate}
+@media (min-width:960px){
+  .pessoas::before{display:none}
+  .sec--azul::after{content:"";position:absolute;top:0;bottom:0;left:50%;right:0;z-index:0;background:url("../img/svc-alvenaria.webp") center 30%/cover no-repeat;filter:blur(10px);opacity:.28;clip-path:inset(0);-webkit-mask-image:linear-gradient(180deg,#000 55%,transparent 100%);mask-image:linear-gradient(180deg,#000 55%,transparent 100%)}
+}
+
+/* faixa de chamada: maiúscula e minúscula, tamanho de título menor */
+.band h2{text-transform:none;font-weight:800;font-size:clamp(1.5rem,3.4vw,2.2rem);line-height:1.2;max-width:34ch;letter-spacing:0}
+@media (min-width:960px){.band h2{max-width:36ch}}
+
+/* títulos das faixas de rolagem em letras maiúsculas */
+.hs__head .h2{text-transform:uppercase}
+
+/* faixa de chamada: fundo azul e botão branco */
+.band{background:var(--blue)}
+.band .btn--cta{background:#fff;color:var(--blue)}
+.band .btn--cta:hover{background:var(--ice);color:var(--blue-d)}
