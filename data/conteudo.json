@@ -1,0 +1,228 @@
+{
+  "area": {
+    "regioes": [
+      "Zona Sul",
+      "Zona Oeste",
+      "Zona Norte",
+      "Niterói"
+    ],
+    "bairros": [
+      "Leblon",
+      "Ipanema",
+      "Botafogo",
+      "Catete",
+      "Flamengo",
+      "Humaitá",
+      "Gávea",
+      "Barra da Tijuca",
+      "Recreio",
+      "Méier",
+      "Vila da Penha",
+      "Turiaçu",
+      "Praça Seca"
+    ]
+  },
+  "hero": {
+    "titulo": "Sua reforma sem imprevistos, sem atrasos e sem dor de cabeça.",
+    "subtitulo": "Coordenamos todos os projetos, integramos os profissionais e acompanhamos tudo de perto, com supervisor full time no local."
+  },
+  "intro": [
+    "Na PVW Construção e Reformas, realizamos projetos que vão além das expectativas, com qualidade excepcional e compromisso rigoroso com os prazos. Há anos, transformamos sonhos em realidade com uma abordagem completa que cuida de cada etapa do seu projeto, do início ao acabamento.",
+    "Se você está preocupado com atrasos, custos inesperados ou com a necessidade de outros profissionais, não se preocupe! Com a PVW, você tem soluções completas, desde a fundação até o acabamento, com garantia de uma experiência sem surpresas."
+  ],
+  "expertise": [
+    "Estruturas duráveis e resistentes (pilares, vigas e lajes)",
+    "Reformas personalizadas para transformar seu espaço com qualidade e inovação.",
+    "Soluções em Reformas e Reparos: entregamos serviços com garantia e qualidade!"
+  ],
+  "servicos": [
+    {
+      "icone": "visita",
+      "titulo": "Visita técnica",
+      "texto": "Visita técnica especializada em reparos e acabamento para o seu imóvel.",
+      "foto": "visita-tecnica"
+    },
+    {
+      "icone": "carpintaria",
+      "titulo": "Carpintaria",
+      "texto": "Carpinteiro de obras em geral: serviço ágil, seguro e com acabamento impecável!",
+      "foto": "carpintaria"
+    },
+    {
+      "icone": "alvenaria",
+      "titulo": "Alvenaria",
+      "texto": "Nossas paredes, internas e externas, são construídas com blocos e tijolos de qualidade, assegurando um acabamento perfeito e seguro.",
+      "foto": "alvenaria"
+    },
+    {
+      "icone": "hidraulica",
+      "titulo": "Hidráulica",
+      "texto": "Contamos com profissionais experientes para a instalação completa de sistemas hidráulicos, feitos para durar.",
+      "foto": "hidraulica"
+    },
+    {
+      "icone": "eletrica",
+      "titulo": "Elétrica",
+      "texto": "Eletricistas profissionais para garantir segurança para todos os cômodos.",
+      "foto": "eletrica"
+    },
+    {
+      "icone": "cobertura",
+      "titulo": "Cobertura",
+      "texto": "Instalamos telhados e lajes que protegem sua construção contra intempéries, trazendo conforto e segurança.",
+      "foto": "cobertura"
+    },
+    {
+      "icone": "acabamento",
+      "titulo": "Acabamento",
+      "texto": "Do revestimento aos detalhes finais, garantimos que cada elemento seja instalado com precisão, garantindo um visual impecável.",
+      "foto": "acabamento"
+    },
+    {
+      "icone": "gesso",
+      "titulo": "Gesso e drywall",
+      "texto": "Oferecemos soluções de gesso e drywall para ambientes sofisticados, ideais para personalizar seu espaço.",
+      "foto": "gesso"
+    },
+    {
+      "icone": "gourmet",
+      "titulo": "Áreas gourmet",
+      "texto": "Desenvolvemos áreas gourmet com design, conforto e funcionalidade, perfeitas para momentos com familiares e amigos.",
+      "foto": "area-gourmet"
+    }
+  ],
+  "processo": [
+    {
+      "titulo": "Sem imprevistos",
+      "texto": "Imagine sua reforma acontecendo sem imprevistos, sem atrasos e sem dor de cabeça."
+    },
+    {
+      "titulo": "Coordenamos tudo",
+      "texto": "Coordenamos todos os projetos."
+    },
+    {
+      "titulo": "Equipe integrada",
+      "texto": "Integramos os profissionais."
+    },
+    {
+      "titulo": "Tudo de perto",
+      "texto": "Acompanhamos tudo de perto."
+    },
+    {
+      "titulo": "Supervisor full time",
+      "texto": "Com um supervisor full time no local, você tem tranquilidade e transparência do início ao fim. Sua casa nova começa aqui!"
+    }
+  ],
+  "selos": [
+    "Pontualidade garantida",
+    "Profissionais especializados",
+    "Qualidade superior",
+    "Segurança em 1º lugar"
+  ],
+  "portfolioTexto": "A PVW Construções tem se destacado em Turiaçu e Praça Seca, RJ, pela qualidade e compromisso em suas reformas. Recentemente, realizamos os seguintes serviços:",
+  "portfolioLista": [
+    "Reformas em Geral: Alvenaria e acabamentos finos.",
+    "Instalações Elétricas: Instalação e manutenção com segurança.",
+    "Pintura: Pinturas internas e externas com acabamento impecável.",
+    "Reformas de Gesso: Rebaixamento de teto e acabamentos modernos."
+  ],
+  "depoimentos": [
+    {
+      "nome": "Maria Lopes",
+      "profissao": "Arquiteta",
+      "foto": "maria",
+      "obra": "",
+      "texto": "Trabalhar com a PVW Construção e Reformas é sinônimo de tranquilidade. A equipe entende a importância do projeto e respeita cada detalhe da minha visão como arquiteta. O resultado é sempre uma execução impecável e clientes extremamente satisfeitos."
+    },
+    {
+      "nome": "Paulo Meireles Souza",
+      "profissao": "Arquiteto",
+      "foto": "paulo",
+      "obra": "",
+      "texto": "A precisão nos acabamentos e o cumprimento de prazos são fundamentais em qualquer projeto de arquitetura. Com a PVW, tenho a certeza de que cada obra será entregue com a mais alta qualidade, facilitando a minha relação com os clientes e aumentando a confiança no meu trabalho."
+    },
+    {
+      "nome": "Ricardo Santos",
+      "profissao": "Engenheiro Civil",
+      "foto": "ricardo",
+      "obra": "",
+      "texto": "A parceria com a PVW Construção e Reformas foi essencial para a conclusão de diversos projetos complexos. A equipe é composta por profissionais dedicados e qualificados, garantindo que as obras sejam realizadas com segurança e eficiência."
+    },
+    {
+      "nome": "Fernanda Costa",
+      "profissao": "Engenheira Civil",
+      "foto": "fernanda",
+      "obra": "",
+      "texto": "Recomendo a PVW sem hesitar. A empresa demonstra um compromisso excepcional com a qualidade estrutural e o bem-estar dos trabalhadores. Cada etapa é planejada com cuidado, proporcionando uma experiência tranquila e segura."
+    },
+    {
+      "nome": "Marcelo Vieira Pinto",
+      "profissao": "Aposentado",
+      "foto": "marcelo",
+      "obra": "",
+      "texto": "Durante a construção da minha residência, a equipe da PVW mostrou profissionalismo e compromisso em cada etapa. Eles transformaram meu projeto em um lar acolhedor e funcional, superando minhas expectativas."
+    },
+    {
+      "nome": "Carolina Ribeiro",
+      "profissao": "Designer de Interiores",
+      "foto": "carolina",
+      "obra": "",
+      "texto": "A PVW supera expectativas em cada projeto, principalmente no quesito acabamento e prazos. A comunicação clara e a expertise dos profissionais tornam o processo de transformação dos espaços muito mais fluido e assertivo."
+    }
+  ],
+  "parceiros": [
+    {
+      "arquivo": "governo-rj",
+      "nome": "Secretaria de Educação do Governo do Estado do Rio de Janeiro",
+      "w": 420,
+      "h": 81
+    },
+    {
+      "arquivo": "chatuba",
+      "nome": "Chatuba Materiais de Construção",
+      "w": 420,
+      "h": 84
+    },
+    {
+      "arquivo": "obramax",
+      "nome": "Obramax Atacado de Construção",
+      "w": 420,
+      "h": 128
+    },
+    {
+      "arquivo": "shalom",
+      "nome": "Shalom Comércio de Embalagens",
+      "w": 400,
+      "h": 164
+    },
+    {
+      "arquivo": "vialight",
+      "nome": "ViaLight Distribuidora",
+      "w": 420,
+      "h": 226
+    }
+  ],
+  "faq": [
+    {
+      "q": "01. Como saberei que minha obra será entregue conforme combinado?",
+      "a": "Há 20 anos, assumimos a missão de transformar sonhos em realidade. Nossa equipe é comprometida, responsável e dedicada a cada projeto."
+    },
+    {
+      "q": "02. E se minha obra atrasar?",
+      "a": "Garantimos que sua obra será entregue no prazo combinado, sem atrasos e com a qualidade que você espera. Aqui, seu planejamento é levado a sério!"
+    },
+    {
+      "q": "03. Meu orçamento passará do valor estimado inicialmente?",
+      "a": "O valor acordado no início da obra é o que você pagará no final. Garantimos um planejamento detalhado para evitar surpresas no seu orçamento. Aqui, o que combinamos é o que entregamos."
+    },
+    {
+      "q": "04. Irei precisar contratar outros profissionais para finalização da minha obra?",
+      "a": "A PVW tem uma equipe qualificada e parceiros de confiança para cuidar de todo o processo da sua obra, garantindo qualidade e entrega no prazo, sem a necessidade de contratar outros profissionais."
+    }
+  ],
+  "ctaFinal": {
+    "titulo": "Transforme Seu Espaço com a PVW Construção e Reformas – Qualidade, Compromisso e Sem Surpresas!",
+    "texto": "Com mais de 100 projetos entregues e clientes satisfeitos em diversas regiões, garantimos a sua confiança com um trabalho transparente e profissional. Solicite seu orçamento hoje mesmo e descubra como a PVW pode transformar o seu projeto com excelência, segurança e eficiência."
+  },
+  "rodape": "PVW Construção e Reformas Transformando Projetos em Realidade, com Excelência e Compromisso."
+}

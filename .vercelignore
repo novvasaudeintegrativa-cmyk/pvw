@@ -1,0 +1,15 @@
+# Publica SOMENTE os arquivos do site. Tudo o mais da pasta (persona, painéis, vídeos de obra,
+# configurações do Claude) fica de fora do deploy.
+/*
+!/index.html
+!/obras/
+!/css/
+!/js/
+!/img/
+!/fonts/
+!/video/
+!/favicon-48.png
+!/favicon-192.png
+!/robots.txt
+!/sitemap.xml
+!/vercel.json

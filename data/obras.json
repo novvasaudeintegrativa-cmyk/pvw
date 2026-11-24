@@ -1,0 +1,395 @@
+{
+  "tipos": {
+    "reforma-completa": "Reforma completa",
+    "gesso-drywall": "Gesso e drywall",
+    "eletrica": "Elétrica",
+    "pintura": "Pintura",
+    "galpao": "Galpão",
+    "area-gourmet": "Área gourmet",
+    "estrutura": "Estrutura e muros"
+  },
+  "obras": [
+    {
+      "slug": "muro-de-divisa",
+      "titulo": "Muro de divisa de terreno com fissuras e inclinação de 15°",
+      "bairro": "",
+      "tipos": [
+        "estrutura"
+      ],
+      "status": "real",
+      "imagem": "muro-de-divisa",
+      "subtitulo": "",
+      "descricao": [],
+      "escopo": "",
+      "prazo": "",
+      "videos": [
+        {
+          "src": "video/muro-antes.mp4",
+          "poster": "img/obras/muro-quebrado.webp",
+          "legenda": "Muro quebrado"
+        },
+        {
+          "src": "video/muro-depois.mp4",
+          "poster": "img/obras/muro-final.webp",
+          "legenda": "Final"
+        }
+      ],
+      "galeria": []
+    },
+    {
+      "slug": "leblon-reforma-completa",
+      "titulo": "Reforma de Sucesso no Leblon: Transformação Completa de um Lar.",
+      "bairro": "Leblon",
+      "tipos": [
+        "reforma-completa",
+        "eletrica"
+      ],
+      "status": "placeholder",
+      "imagem": "leblon-reforma-completa",
+      "subtitulo": "Transforme seu Imóvel com a PVW Construções: Especialistas em Reforma de Apartamentos e Instalação Elétrica",
+      "descricao": [
+        "A PVW Construções é referência em reformas de imóveis, com foco na reforma de apartamentos e na realização de serviços de instalação elétrica. Sabemos que cada espaço tem seu próprio estilo e necessidades, por isso, trabalhamos com soluções personalizadas para atender a todos os requisitos dos nossos clientes. Se você está pensando em renovar seu apartamento ou melhorar a infraestrutura elétrica do seu imóvel, nossa equipe especializada está pronta para entregar resultados de alta qualidade.",
+        "A reforma de apartamentos é um dos nossos principais serviços, realizando transformações completas em ambientes como salas, quartos, cozinhas e banheiros. Seja para modernizar a decoração, aumentar a funcionalidade dos espaços ou corrigir falhas estruturais, a PVW Construções oferece soluções completas e eficientes. Com anos de experiência no mercado, nossa equipe garante que seu projeto será executado dentro do prazo, sem surpresas e com total transparência.",
+        "Além das reformas estruturais e estéticas, sabemos que a instalação elétrica é um dos aspectos mais importantes de qualquer imóvel. Por isso, nossa equipe realiza instalação elétrica de alta qualidade, sempre com atenção aos detalhes e seguindo as normas de segurança exigidas. Seja para realizar reparos, substituir fiação antiga ou adaptar a instalação elétrica à necessidade de novos equipamentos, oferecemos serviços completos e eficientes, garantindo que sua residência ou ponto comercial esteja em conformidade com as melhores práticas de segurança.",
+        "Ao realizar uma reforma de apartamentos, muitos optam por reformar também a parte elétrica do imóvel, já que é uma oportunidade de garantir mais segurança e modernização. A instalação elétrica nos apartamentos inclui desde a troca de fios e disjuntores até a instalação de novos sistemas de iluminação e tomadas, tudo pensado para melhorar a funcionalidade e eficiência energética do seu espaço. Trabalhamos com materiais de alta qualidade e realizamos cada serviço com o máximo de precisão.",
+        "Além disso, as reformas realizadas pela PVW Construções incluem acabamento de alto padrão, como pintura, revestimento de pisos e azulejos, e melhorias no isolamento acústico e térmico. Sabemos que um apartamento reformado não é só uma questão estética, mas também de conforto e funcionalidade. Por isso, nossa equipe se dedica para que cada detalhe seja atendido, deixando seu imóvel totalmente pronto para você aproveitar ao máximo.",
+        "Se você está procurando uma empresa de confiança para realizar a reforma de apartamentos ou a instalação elétrica, a PVW Construções é a escolha certa. Com um trabalho cuidadoso, materiais de qualidade e uma equipe qualificada, garantimos que seu projeto será executado da melhor maneira possível. Entre em contato conosco e peça seu orçamento personalizado – estamos prontos para transformar seu imóvel!"
+      ],
+      "escopo": "",
+      "prazo": "",
+      "videos": [],
+      "galeria": []
+    },
+    {
+      "slug": "botafogo-reforma-exclusiva",
+      "titulo": "Reforma Exclusiva em Botafogo: Modernização de um Espaço Único",
+      "bairro": "Botafogo",
+      "tipos": [
+        "reforma-completa"
+      ],
+      "status": "placeholder",
+      "imagem": "botafogo-reforma-exclusiva",
+      "subtitulo": "Reforma Exclusiva em Botafogo: Modernização de um Espaço Único com Reformas Residenciais e Serviços de Alvenaria",
+      "descricao": [
+        "A PVW Construções teve o privilégio de realizar uma reforma exclusiva em um imóvel localizado em Botafogo, proporcionando uma transformação completa e única. Com foco em reformas residenciais, trabalhamos para transformar o ambiente, criando um espaço moderno, funcional e aconchegante, atendendo às necessidades e desejos dos nossos clientes. Cada detalhe foi pensado para oferecer o máximo de conforto e sofisticação ao imóvel.",
+        "O trabalho foi realizado com precisão e excelência, incluindo serviços de alvenaria que envolveram desde a demolição de paredes até a criação de novos ambientes. Nossa equipe de especialistas em serviços de alvenaria garantiu que a estrutura do imóvel fosse transformada sem comprometer a segurança e a durabilidade. Ao longo do processo, a PVW Construções se dedicou a oferecer o melhor em cada fase da obra, desde o planejamento até o acabamento final.",
+        "A reforma residencial em Botafogo incluiu a reconfiguração de espaços, como salas, quartos e banheiros, que ganharam uma nova cara com acabamentos modernos e materiais de qualidade. A ideia era criar um ambiente que atendesse aos padrões exigidos pelos moradores, com um toque de elegância e funcionalidade. Cada ambiente foi cuidadosamente projetado para aproveitar ao máximo a área disponível, transformando o imóvel em um verdadeiro lar.",
+        "Durante a obra, os serviços de alvenaria foram fundamentais para redefinir a disposição dos cômodos, criando uma integração entre os ambientes e garantindo que o espaço fosse aproveitado de forma inteligente. O uso de alvenaria de alta qualidade foi essencial para que as novas estruturas fossem sólidas e resistentes, além de esteticamente agradáveis. Nossa equipe utilizou as melhores técnicas e materiais para garantir um trabalho impecável.",
+        "Além das mudanças estruturais e nos acabamentos, também realizamos melhorias nos aspectos elétricos e hidráulicos do imóvel, proporcionando uma reforma completa. A reforma residencial não se limita apenas à estética, mas também à funcionalidade e segurança, e esses pontos foram priorizados em cada detalhe da obra. Com isso, o imóvel em Botafogo não só se modernizou, mas também ganhou mais conforto e praticidade para o dia a dia.",
+        "Se você busca uma empresa de confiança para realizar reformas residenciais de qualidade ou serviços de alvenaria em Botafogo, a PVW Construções é a escolha certa. Nossa equipe está pronta para transformar o seu espaço, atendendo às suas necessidades e superando suas expectativas. Entre em contato conosco para um orçamento personalizado e descubra como podemos modernizar o seu imóvel com excelência."
+      ],
+      "escopo": "",
+      "prazo": "",
+      "videos": [],
+      "galeria": []
+    },
+    {
+      "slug": "leblon-renovacao-de-ambientes",
+      "titulo": "Renovação de Elegância no Leblon: Projeto Completo",
+      "bairro": "Leblon",
+      "tipos": [
+        "reforma-completa"
+      ],
+      "status": "placeholder",
+      "imagem": "leblon-renovacao-de-ambientes",
+      "subtitulo": "Renovação de Elegância no Leblon: Projeto Completo de Renovação de Ambientes e Reformas de Qualidade RJ",
+      "descricao": [
+        "A PVW Construções teve o prazer de realizar um projeto exclusivo de renovação de ambientes no Leblon, um dos bairros mais sofisticados do Rio de Janeiro. Nosso objetivo foi transformar um espaço que já possuía charme e elegância em algo ainda mais moderno, funcional e adaptado às necessidades do cliente. A renovação de ambientes foi realizada com o máximo de cuidado e atenção aos detalhes, visando sempre o conforto e a estética desejada.",
+        "O projeto envolveu diversas etapas, incluindo reformas de qualidade RJ em todos os espaços do imóvel. A nossa equipe trabalhou com materiais de alta qualidade e técnicas modernas, garantindo que cada detalhe fosse impecável. Desde o redesenho de layout até a escolha de acabamentos, todos os aspectos do imóvel foram pensados para criar um ambiente mais acolhedor e contemporâneo, sem perder a elegância característica do Leblon.",
+        "A renovação de ambientes no Leblon incluiu a modernização da sala de estar, quartos, banheiros e cozinha, trazendo funcionalidade sem abrir mão da estética. Cada espaço foi cuidadosamente planejado para oferecer o máximo de conforto e sofisticação. Para isso, utilizamos soluções inovadoras e personalizadas, criando ambientes que se adequam perfeitamente ao estilo de vida dos moradores, sem comprometer a beleza do local.",
+        "Em todos os nossos projetos, a PVW Construções tem como objetivo entregar reformas de qualidade RJ. Em cada obra, a qualidade é garantida através do uso de materiais duráveis, profissionais especializados e um processo de trabalho transparente e eficiente. No caso da renovação de ambientes no Leblon, isso se traduziu em um trabalho de alto padrão, que superou as expectativas dos clientes e trouxe um novo nível de sofisticação ao imóvel.",
+        "Além das mudanças estruturais, a reforma de qualidade RJ também incluiu melhorias nos sistemas elétrico e hidráulico, garantindo que o imóvel estivesse totalmente atualizado e seguro. Trabalhamos para otimizar cada detalhe da casa, desde a distribuição de energia elétrica até a instalação de novos sistemas de iluminação e climatização, sempre com o objetivo de criar um ambiente mais confortável e funcional.",
+        "Se você está em busca de renovação de ambientes ou reformas de qualidade RJ, a PVW Construções é a empresa ideal para transformar o seu imóvel. Com nossa experiência, qualidade e compromisso com o cliente, garantimos um resultado final que atenda a todas as suas expectativas. Entre em contato conosco e descubra como podemos renovar e valorizar o seu espaço com excelência."
+      ],
+      "escopo": "",
+      "prazo": "",
+      "videos": [],
+      "galeria": []
+    },
+    {
+      "slug": "ipanema-reforma-sofisticada",
+      "titulo": "Do Antigo ao Novo: Reforma Sofisticada em Ipanema",
+      "bairro": "Ipanema",
+      "tipos": [
+        "reforma-completa"
+      ],
+      "status": "placeholder",
+      "imagem": "ipanema-reforma-sofisticada",
+      "subtitulo": "",
+      "descricao": [
+        "Em Ipanema, um dos bairros mais icônicos e sofisticados do Rio de Janeiro, a reforma de uma residência exige não apenas atenção aos detalhes, mas também um profundo respeito pela elegância e estilo da região. A proposta de reforma apresentada visa transformar este lar em um espaço moderno e funcional, sem abrir mão da sofisticação que a localização exige.",
+        "A reforma no Rio de Janeiro foi planejada para integrar elementos contemporâneos com o charme clássico de Ipanema, criando um ambiente que seja ao mesmo tempo aconchegante e sofisticado. A escolha de materiais de alta qualidade, combinados com o design arrojado, garantiu que cada cômodo da casa fosse otimizado para proporcionar conforto e praticidade, sem perder o glamour característico da cidade.",
+        "Para a reforma residencial, o projeto incorporou acabamentos de luxo, iluminação estratégica e soluções inteligentes de aproveitamento de espaço, atendendo às necessidades dos moradores de forma funcional e requintada. Cada ambiente recebeu uma atenção especial, desde a sala de estar até os quartos, com o objetivo de criar um ambiente harmonioso e acolhedor para todos.",
+        "A cozinha, um dos principais focos da reforma, foi equipada com eletrodomésticos de última geração e móveis sob medida, garantindo não apenas um alto nível de sofisticação, mas também praticidade no dia a dia. As escolhas de acabamentos, como bancadas de mármore e detalhes em madeira, conferem à cozinha uma aparência clean e luxuosa.",
+        "Além disso, a reforma de banheiros e áreas sociais foi pensada para criar espaços amplos e iluminados, com o uso de revestimentos exclusivos e acessórios de alto padrão. A integração de elementos naturais, como o uso de plantas e madeira, trouxe um toque de frescor e modernidade, garantindo que a reforma residencial fosse um reflexo da beleza natural do Rio de Janeiro."
+      ],
+      "escopo": "",
+      "prazo": "",
+      "videos": [],
+      "galeria": []
+    },
+    {
+      "slug": "catete-reforma-de-luxo",
+      "titulo": "Reforma de Luxo no Catete: Transformação de Ambientes",
+      "bairro": "Catete",
+      "tipos": [
+        "reforma-completa"
+      ],
+      "status": "placeholder",
+      "imagem": "catete-reforma-de-luxo",
+      "subtitulo": "",
+      "descricao": [
+        "No coração do Catete, um dos bairros mais tradicionais e charmosos do Rio de Janeiro, a reforma de luxo traz um novo conceito de sofisticação e modernidade. O projeto foi concebido para preservar a história e a arquitetura única da região, enquanto proporciona aos moradores um ambiente contemporâneo e de alto padrão, com acabamentos exclusivos e uma atenção minuciosa aos detalhes.",
+        "A reforma no Rio de Janeiro, no Catete, reflete o equilíbrio perfeito entre o clássico e o moderno. Com foco na elegância e no conforto, cada ambiente foi projetado para oferecer um estilo de vida refinado, sem abrir mão da funcionalidade. As linhas arquitetônicas originais foram mantidas, mas adaptadas às necessidades contemporâneas, criando um lar único, com espaços amplos e iluminados.",
+        "Na reforma residencial, materiais nobres foram escolhidos para garantir durabilidade e beleza. Pisos de mármore, esquadrias de alto padrão e acabamentos metálicos sofisticados fazem parte de cada cômodo, criando uma atmosfera luxuosa e acolhedora. A cozinha, totalmente reestruturada, conta com móveis planejados e eletrodomésticos de última geração, proporcionando praticidade e beleza em um só ambiente.",
+        "A área social da residência foi projetada para impressionar. O projeto de iluminação destaca as áreas internas e externas, criando uma atmosfera sofisticada que convida ao relaxamento e entretenimento. O uso de vidro e madeira natural garante que a casa esteja em harmonia com o entorno, proporcionando um ambiente tranquilo e ao mesmo tempo elegante.",
+        "Os banheiros também receberam uma atenção especial durante a reforma de luxo no Catete. Revestimentos de alto padrão, como porcelanatos italianos, metais dourados e mármores exclusivos, criaram um ambiente de spa dentro de casa. Cada detalhe foi pensado para transformar a rotina diária em um momento de prazer e bem-estar."
+      ],
+      "escopo": "",
+      "prazo": "",
+      "videos": [],
+      "galeria": []
+    },
+    {
+      "slug": "flamengo-reforma-realizada",
+      "titulo": "Detalhes que Encantam: Reforma Realizada em Flamengo",
+      "bairro": "Flamengo",
+      "tipos": [
+        "reforma-completa"
+      ],
+      "status": "placeholder",
+      "imagem": "flamengo-reforma-realizada",
+      "subtitulo": "",
+      "descricao": [
+        "No bairro do Flamengo, um dos mais tradicionais e refinados do Rio de Janeiro, a reforma realizada foi pensada para transformar um imóvel clássico em um verdadeiro ícone de sofisticação e modernidade. O projeto trouxe um novo conceito de moradia, com uma combinação perfeita entre o charme histórico do bairro e a elegância contemporânea, resultando em um ambiente de altíssimo padrão.",
+        "A reforma no Rio de Janeiro no Flamengo focou em criar um espaço funcional, sem abrir mão da beleza. Cada detalhe foi cuidadosamente planejado para valorizar o imóvel e atender às necessidades dos moradores. O projeto de design de interiores mesclou elementos de luxo com soluções práticas, criando ambientes espaçosos, confortáveis e aconchegantes, que exaltam o charme único da região.",
+        "Na reforma residencial, o uso de materiais de alta qualidade foi a chave para garantir o sucesso do projeto. Pisos de porcelanato polido, revestimentos sofisticados e móveis sob medida deram vida a um ambiente elegante e funcional. A cozinha, uma das grandes protagonistas da reforma, foi totalmente repaginada, equipada com eletrodomésticos de última geração e acabamentos modernos, garantindo uma experiência gastronômica de alto nível.",
+        "As áreas sociais receberam um upgrade significativo, com a inclusão de soluções de iluminação que realçam a beleza do espaço. Grandes janelas de vidro proporcionam uma iluminação natural abundante e vistas incríveis, conectando os moradores ao vibrante ambiente do Flamengo. O design minimalista foi adotado para criar um espaço clean e sofisticado, ideal para recepções e momentos de lazer.",
+        "Os banheiros também passaram por uma transformação completa, com a instalação de revestimentos de luxo, metais cromados e detalhes em mármore que conferem sofisticação. Cada banheiro foi projetado para proporcionar uma experiência de spa, com acabamentos refinados e soluções práticas que atendem a todas as necessidades dos moradores.",
+        "A reforma no Flamengo não se limitou apenas à estética, mas também focou em soluções sustentáveis e de eficiência energética, garantindo um alto padrão de qualidade de vida. O projeto, que uniu beleza e funcionalidade, resultou em uma residência moderna, elegante e confortável, refletindo o estilo de vida sofisticado de seus moradores e o charme único do Flamengo."
+      ],
+      "escopo": "",
+      "prazo": "",
+      "videos": [],
+      "galeria": []
+    },
+    {
+      "slug": "vila-da-penha-renovacao",
+      "titulo": "Novo Estilo em Vila da Penha: Obra de Renovação Impressionante",
+      "bairro": "Vila da Penha",
+      "tipos": [
+        "reforma-completa"
+      ],
+      "status": "placeholder",
+      "imagem": "vila-da-penha-renovacao",
+      "subtitulo": "",
+      "descricao": [
+        "Na Vila da Penha, um bairro tradicional e cheio de história no Rio de Janeiro, foi realizada uma obra de renovação impressionante que transformou um imóvel antigo em um espaço moderno e funcional, sem perder a essência do local. O projeto de renovação foi cuidadosamente elaborado para atender às necessidades dos moradores, combinando estilo contemporâneo com soluções práticas para o dia a dia.",
+        "A renovação no Rio de Janeiro na Vila da Penha foi projetada para otimizar cada centímetro do imóvel, criando ambientes espaçosos e bem iluminados. O conceito de \"abrir espaços\" foi utilizado, removendo paredes desnecessárias e criando um layout mais fluido e integrado. A ideia era proporcionar um ambiente acolhedor e arejado, ideal para a rotina urbana e ao mesmo tempo conectado com a energia vibrante do bairro.",
+        "Os acabamentos da obra de renovação residencial foram escolhidos com base na durabilidade e na estética. O piso de porcelanato de alta resistência, combinado com detalhes em madeira natural, trouxe um toque sofisticado a cada ambiente. A cozinha, um dos pontos focais da renovação, foi modernizada com móveis planejados e novos eletrodomésticos, criando um espaço funcional e esteticamente agradável, perfeito para o preparo de refeições em família.",
+        "A reforma das áreas externas também mereceu destaque, com a criação de um pequeno jardim vertical e a inclusão de iluminação estratégica, que valorizou a fachada e trouxe mais vida ao imóvel. A integração entre o interior e o exterior foi um dos principais focos, permitindo que os moradores desfrutassem de momentos ao ar livre sem abrir mão da privacidade.",
+        "Os banheiros passaram por uma transformação completa, com a instalação de revestimentos modernos e metais de alto padrão. O uso de iluminação indireta e espelhos amplos contribuiu para criar um ambiente de relaxamento, perfeito para o pós-trabalho ou momentos de lazer. Cada detalhe foi pensado para proporcionar uma sensação de bem-estar e conforto.",
+        "A renovação impressionante na Vila da Penha não apenas trouxe beleza e modernidade ao imóvel, mas também otimizou a funcionalidade de cada espaço. A obra, que combina soluções inovadoras e práticas, reflete o estilo de vida contemporâneo do bairro, oferecendo aos moradores uma residência mais funcional, sofisticada e agradável para o dia a dia."
+      ],
+      "escopo": "",
+      "prazo": "",
+      "videos": [],
+      "galeria": []
+    },
+    {
+      "slug": "barra-da-tijuca-espacos-renovados",
+      "titulo": "Espaços Renovados com Sofisticação em Barra da Tijuca",
+      "bairro": "Barra da Tijuca",
+      "tipos": [
+        "reforma-completa"
+      ],
+      "status": "placeholder",
+      "imagem": "barra-da-tijuca-espacos-renovados",
+      "subtitulo": "",
+      "descricao": [
+        "Na Barra da Tijuca, uma das regiões mais sofisticadas da Zona Oeste do Rio de Janeiro, foi realizada uma renovação impressionante que transformou um imóvel comum em um espaço moderno e elegante. A proposta foi criar um ambiente refinado, alinhado com as tendências contemporâneas, sem perder a funcionalidade e a conexão com a região. O projeto buscou atender às necessidades de quem busca viver com conforto e estilo, mantendo a essência do local.",
+        "A renovação no Rio de Janeiro, na Barra da Tijuca, foi concebida para oferecer espaços amplos e bem iluminados, ideais para quem aprecia um estilo de vida moderno e prático. Cada ambiente foi projetado para proporcionar funcionalidade e equilíbrio, com o uso de materiais de excelente qualidade e acabamentos que garantem harmonia entre o contemporâneo e o clássico.",
+        "A renovação residencial transformou os ambientes, começando pela sala de estar, que agora conta com uma decoração clean e sofisticada. O mobiliário planejado e os detalhes em marcenaria criaram um ambiente acolhedor, ideal para momentos de lazer e convivência. A iluminação foi pensada para destacar cada área, criando uma atmosfera agradável e confortável.",
+        "A cozinha, que passou por uma reestruturação completa, agora apresenta eletrodomésticos de última geração, além de armários sob medida que garantem praticidade e organização. A escolha dos acabamentos, como o uso de granito e o toque de madeira, trouxe equilíbrio ao ambiente, refletindo o estilo contemporâneo da Barra da Tijuca, sem abrir mão da funcionalidade.",
+        "Os banheiros também receberam atenção especial na renovação. Os revestimentos de porcelanato de qualidade, junto aos metais modernos e detalhes em mármore, criaram um ambiente agradável e relaxante. A combinação de iluminação suave com espelhos amplos proporciona um ambiente de bem-estar, transformando a rotina diária em uma experiência de conforto.",
+        "O espaço externo foi renovado para garantir a integração perfeita entre o interior e o exterior. O projeto incluiu a criação de um pequeno jardim com plantas tropicais, ideal para aproveitar os dias de sol na Barra da Tijuca. A área de lazer foi equipada com mobiliário prático, tornando-a o local perfeito para receber amigos e familiares com conforto.",
+        "Com uma renovação sofisticada na Barra da Tijuca, o imóvel reflete a modernidade e o estilo da Zona Oeste, proporcionando aos moradores um ambiente único e funcional. A obra não só valorizou o imóvel, mas também criou um espaço perfeito para quem deseja viver com conforto, praticidade e estilo em cada detalhe."
+      ],
+      "escopo": "",
+      "prazo": "",
+      "videos": [],
+      "galeria": []
+    },
+    {
+      "slug": "recreio-reforma-completa",
+      "titulo": "Beleza e Conforto no Recreio: Reforma Completa de Ambientes",
+      "bairro": "Recreio",
+      "tipos": [
+        "reforma-completa"
+      ],
+      "status": "placeholder",
+      "imagem": "recreio-reforma-completa",
+      "subtitulo": "",
+      "descricao": [
+        "No Recreio dos Bandeirantes, um dos bairros mais tranquilos e charmosos do Rio de Janeiro, foi realizada uma reforma completa de ambientes que transformou o imóvel em um verdadeiro refúgio de beleza e conforto. O objetivo foi criar um espaço acolhedor, prático e moderno, que atendesse às necessidades de quem busca viver com qualidade e bem-estar, sem abrir mão do estilo.",
+        "A reforma no Rio de Janeiro, no Recreio, foi planejada para valorizar cada ambiente da residência. Desde o início do projeto, o foco foi integrar os espaços de maneira funcional, criando um layout fluido que aproveitasse ao máximo a iluminação natural e as vistas ao redor. O uso de materiais de alta qualidade, com acabamentos precisos, garantiu a estética e a durabilidade dos ambientes renovados.",
+        "Na reforma completa de ambientes, a sala de estar foi redesenhada para criar um espaço de convivência aconchegante e moderno. O mobiliário foi cuidadosamente escolhido para proporcionar conforto e sofisticação, com detalhes que refletem o estilo contemporâneo do Recreio. A iluminação foi pensada para destacar pontos chave da decoração, criando uma atmosfera relaxante e agradável para todos os momentos.",
+        "A cozinha também foi completamente renovada, com a instalação de móveis planejados, eletrodomésticos modernos e acabamentos que garantem a praticidade e o bom gosto. O design aberto da cozinha a conecta com a sala de jantar, criando um ambiente ideal para receber amigos e familiares com muito conforto e estilo. Materiais como granito e aço inox foram utilizados para dar um toque de elegância ao ambiente, sem perder a funcionalidade.",
+        "Os banheiros passaram por uma transformação completa, ganhando revestimentos modernos e sofisticados, além de detalhes em mármore e metais de alta qualidade. Cada banheiro foi projetado para proporcionar uma sensação de spa, com iluminação suave e espaços bem planejados para conforto e praticidade no dia a dia.",
+        "O espaço externo também foi renovado para garantir a integração perfeita com os ambientes internos. A criação de um pequeno jardim e a adição de mobiliário de exterior tornaram o ambiente perfeito para momentos ao ar livre, aproveitando o clima agradável do Recreio. A área de lazer foi planejada para ser funcional e convidativa, com espaços para relaxar e receber visitas de maneira confortável.",
+        "Com uma reforma completa de ambientes no Recreio, o imóvel foi transformado em um espaço que une beleza e conforto, criando um lar perfeito para quem busca qualidade de vida. A obra trouxe modernidade e praticidade, ao mesmo tempo em que manteve o charme e a tranquilidade do bairro, garantindo um ambiente funcional, acolhedor e sofisticado para os moradores."
+      ],
+      "escopo": "",
+      "prazo": "",
+      "videos": [],
+      "galeria": []
+    },
+    {
+      "slug": "niteroi-casa-dos-sonhos",
+      "titulo": "Casa dos Sonhos: Transformação Realizada em Niterói",
+      "bairro": "Niterói",
+      "tipos": [
+        "reforma-completa",
+        "area-gourmet"
+      ],
+      "status": "placeholder",
+      "imagem": "niteroi-casa-dos-sonhos",
+      "subtitulo": "",
+      "descricao": [
+        "Em Niterói, uma das cidades mais encantadoras do Rio de Janeiro, foi realizada a criação de uma verdadeira casa dos sonhos, onde cada detalhe foi planejado para oferecer aos moradores o máximo de conforto, beleza e sofisticação. A transformação completa de ambientes trouxe à tona uma residência moderna, funcional e cheia de personalidade, ideal para quem busca viver em um espaço que reflete os seus mais altos desejos de qualidade de vida.",
+        "A reforma em Niterói foi cuidadosamente planejada para integrar os ambientes de forma harmônica, aproveitando ao máximo as características naturais do imóvel e da localização. Com a utilização de materiais de alta qualidade e acabamentos refinados, cada ambiente recebeu atenção especial para garantir que a casa fosse tanto funcional quanto esteticamente agradável.",
+        "Na criação da casa dos sonhos, a sala de estar foi projetada para ser o ponto de encontro dos moradores, com um ambiente acolhedor e contemporâneo. O uso de móveis sob medida, aliado a uma iluminação estratégica, criou um espaço perfeito para momentos de lazer, descanso e convivência. As cores neutras e os detalhes em madeira e vidro trouxeram sofisticação e leveza ao ambiente, refletindo o estilo moderno e sofisticado que a casa oferece.",
+        "A cozinha, totalmente renovada, se tornou um verdadeiro destaque da casa. Com eletrodomésticos de última geração, bancadas em mármore e armários planejados, o ambiente ganhou praticidade e requinte. A escolha dos materiais e o design aberto criaram um espaço funcional, ideal para preparar refeições, além de ser perfeito para reuniões familiares ou recepções informais.",
+        "Os banheiros passaram por uma transformação luxuosa, com a instalação de revestimentos de porcelanato de alto padrão, detalhes em mármore e metais sofisticados. Cada banheiro foi projetado para criar uma experiência de relaxamento e bem-estar, com iluminação suave e ambientes amplos, ideal para momentos de autocuidado.",
+        "Além disso, o projeto contemplou a área externa da casa, criando um ambiente de lazer perfeito para aproveitar os dias de sol em Niterói. O jardim foi cuidadosamente planejado, com plantas que trazem frescor e beleza ao espaço. A área gourmet foi equipada com churrasqueira, forno e móveis sob medida, criando o cenário ideal para confraternizações e momentos de descontração com amigos e familiares.",
+        "A casa dos sonhos em Niterói não é apenas um espaço de morar, mas um verdadeiro reflexo do estilo de vida dos seus moradores. Cada detalhe da transformação completa de ambientes foi pensado para garantir o máximo de conforto, funcionalidade e sofisticação. O resultado final é um lar que combina modernidade, elegância e praticidade, proporcionando uma experiência única de bem-estar e felicidade para quem nele habita."
+      ],
+      "escopo": "",
+      "prazo": "",
+      "videos": [],
+      "galeria": []
+    },
+    {
+      "slug": "humaita-reforma-alto-padrao",
+      "titulo": "Reforma de Alto Padrão em Humaitá: Estilo e Funcionalidade",
+      "bairro": "Humaitá",
+      "tipos": [
+        "reforma-completa",
+        "area-gourmet"
+      ],
+      "status": "placeholder",
+      "imagem": "humaita-reforma-alto-padrao",
+      "subtitulo": "",
+      "descricao": [
+        "No coração do Humaitá, um dos bairros mais tradicionais e charmosos do Rio de Janeiro, foi realizada uma transformação que une estilo e funcionalidade de maneira impecável. O objetivo do projeto foi renovar um imóvel, respeitando a essência do bairro e suas características, enquanto cria um espaço contemporâneo, funcional e extremamente acolhedor para os moradores.",
+        "A reforma no Rio de Janeiro, no Humaitá, foi pensada para otimizar os espaços, criando uma residência moderna que atende às necessidades do dia a dia, sem perder a elegância. Cada ambiente foi projetado para trazer praticidade, sem abrir mão do estilo, criando uma atmosfera sofisticada e funcional.",
+        "Na transformação do imóvel, a sala de estar foi totalmente repaginada, com uma decoração clean e moderna, que combina móveis contemporâneos e materiais nobres. O uso inteligente de iluminação e a escolha cuidadosa dos acabamentos proporcionaram um ambiente acolhedor e confortável, ideal para relaxar ou receber amigos e familiares.",
+        "A cozinha foi reformada para oferecer mais praticidade e estilo. Equipamentos de última geração, armários planejados e bancadas amplas garantem que o ambiente seja não apenas funcional, mas também esteticamente agradável. A integração com a sala de jantar cria um ambiente amplo, ideal para momentos de confraternização, sem abrir mão da praticidade do dia a dia.",
+        "Os banheiros receberam uma atenção especial na reforma, com o uso de revestimentos modernos e materiais de alta qualidade. A combinação de porcelanato, mármore e metais sofisticados criou ambientes de spa, onde o conforto e a estética caminham lado a lado, proporcionando uma experiência de bem-estar para os moradores.",
+        "A área externa também foi planejada para oferecer mais funcionalidade e estilo. O projeto de paisagismo trouxe o frescor das plantas tropicais, enquanto a área gourmet, com churrasqueira e espaço para refeições ao ar livre, oferece um ambiente perfeito para momentos de lazer e descontração.",
+        "Com um design que une estilo e funcionalidade, a reforma no Humaitá transformou este imóvel em um lar moderno e prático, que atende a todas as necessidades dos moradores, sem abrir mão da sofisticação e elegância que o bairro oferece. Cada detalhe foi pensado para criar um ambiente confortável, funcional e cheio de estilo, proporcionando aos moradores uma experiência de vida única e prazerosa."
+      ],
+      "escopo": "",
+      "prazo": "",
+      "videos": [],
+      "galeria": []
+    },
+    {
+      "slug": "gavea-espacos-reimaginados",
+      "titulo": "Espaços Reimaginados em Gávea: Obra de Reforma Finalizada",
+      "bairro": "Gávea",
+      "tipos": [
+        "reforma-completa",
+        "area-gourmet"
+      ],
+      "status": "placeholder",
+      "imagem": "gavea-espacos-reimaginados",
+      "subtitulo": "",
+      "descricao": [
+        "Na Gávea, um dos bairros mais sofisticados da Zona Sul do Rio de Janeiro, a reforma residencial trouxe um novo conceito de modernidade e elegância. O projeto foi cuidadosamente elaborado para atender às necessidades dos moradores, respeitando a estética e o charme da região, ao mesmo tempo em que proporcionou um ambiente contemporâneo e funcional.",
+        "A reforma no Rio de Janeiro, na Gávea, foi planejada para otimizar cada ambiente, criando espaços amplos, bem iluminados e integrados. O uso de materiais de alta qualidade e acabamentos sofisticados garantiu a durabilidade e a beleza dos ambientes renovados, transformando o imóvel em um lar moderno, acolhedor e cheio de estilo.",
+        "Na reforma de ambientes, a sala de estar foi repaginada para proporcionar um espaço confortável e elegante, ideal para convivência e lazer. O mobiliário planejado, aliado à iluminação estratégica, conferiu sofisticação e aconchego, criando um ambiente perfeito para relaxar ou receber visitas. As cores neutras e os detalhes em madeira e vidro foram escolhidos para dar leveza ao ambiente, sem perder a classe e sofisticação.",
+        "A cozinha, uma das principais áreas da casa, foi totalmente reformada com eletrodomésticos de última geração e móveis planejados. A escolha de materiais como o granito e o aço inox trouxe funcionalidade e elegância, criando um espaço ideal para a preparação de refeições e interação entre os moradores. A integração com a sala de jantar e a área externa garante um ambiente fluido e arejado, perfeito para reuniões familiares ou eventos sociais.",
+        "Os banheiros foram completamente transformados, com o uso de revestimentos sofisticados, metais de alto padrão e detalhes em mármore. Cada banheiro foi projetado para criar uma experiência de relaxamento, com espaços amplos, iluminação suave e acabamentos refinados, proporcionando bem-estar e conforto aos moradores.",
+        "A área externa também recebeu uma renovação, com o projeto de paisagismo que trouxe o frescor das plantas tropicais, características da Gávea, além da criação de um espaço de lazer com piscina e área gourmet. Este ambiente foi planejado para que os moradores possam desfrutar do clima carioca de maneira confortável, seja para relaxamento ou para receber amigos e familiares.",
+        "A reforma na Gávea transformou o imóvel em um espaço que combina perfeitamente modernidade e elegância, criando um lar funcional, acolhedor e sofisticado. Cada detalhe foi pensado para oferecer qualidade de vida, sem perder a essência e o charme que fazem da Gávea um dos bairros mais desejados da Zona Sul do Rio de Janeiro."
+      ],
+      "escopo": "",
+      "prazo": "",
+      "videos": [],
+      "galeria": []
+    },
+    {
+      "slug": "meier-reforma-de-sucesso",
+      "titulo": "Reforma de Sucesso no Méier: Transformação Completa de um Lar",
+      "bairro": "Méier",
+      "tipos": [
+        "reforma-completa"
+      ],
+      "status": "placeholder",
+      "imagem": "meier-reforma-de-sucesso",
+      "subtitulo": "",
+      "descricao": [
+        "No coração da Zona Norte do Rio de Janeiro, no bairro tradicional do Méier, foi realizada uma reforma de sucesso que transformou um imóvel antigo em um espaço moderno, funcional e aconchegante. O projeto teve como objetivo criar um ambiente ideal para a rotina cotidiana, com foco na praticidade e no estilo, sem abrir mão do conforto e da qualidade de vida.",
+        "A reforma no Méier, um dos bairros mais dinâmicos da Zona Norte, foi cuidadosamente planejada para otimizar cada ambiente, aproveitando ao máximo a área disponível. O projeto valorizou as características originais do imóvel, enquanto modernizou os espaços para atender às necessidades contemporâneas dos moradores. A combinação de estética e funcionalidade foi a chave para o sucesso desta transformação.",
+        "Na reforma residencial, a sala de estar foi projetada para ser o centro de convivência da casa, criando um ambiente acolhedor e convidativo. O uso de móveis sob medida, juntamente com uma iluminação estratégica, garantiu que o espaço fosse confortável e ao mesmo tempo estiloso. A integração com outros cômodos e a escolha de materiais como o porcelanato e a madeira trouxe modernidade, mantendo a aconchegância característica do Méier.",
+        "A cozinha passou por uma transformação completa, sendo equipada com eletrodomésticos de última geração e armários planejados, criando um espaço prático e funcional para o preparo das refeições. A escolha de acabamentos de qualidade, como bancadas de granito e azulejos modernos, conferiu ao ambiente um toque de sofisticação, tornando a cozinha um dos destaques da reforma.",
+        "Os banheiros também receberam atenção especial. Com a utilização de revestimentos contemporâneos e metais de alto padrão, os banheiros ganharam um visual clean e moderno. Detalhes como iluminação indireta e o uso de espelhos amplos criaram um ambiente relaxante, perfeito para os momentos de autocuidado.",
+        "Além disso, o espaço externo do imóvel também foi renovado, oferecendo um ambiente agradável para os moradores aproveitarem os dias de sol. O jardim foi planejado com plantas que trazem frescor ao local, e a área de lazer foi equipada para proporcionar conforto e praticidade para encontros sociais e momentos de descontração.",
+        "A reforma de sucesso no Méier não só transformou o imóvel, mas também trouxe mais qualidade de vida aos seus moradores. Cada detalhe foi pensado para criar um lar moderno, funcional e confortável, refletindo o estilo de vida da Zona Norte do Rio de Janeiro. O resultado final é uma residência que combina praticidade, beleza e conforto, ideal para quem busca viver com qualidade e bem-estar no coração do Méier."
+      ],
+      "escopo": "",
+      "prazo": "",
+      "videos": [],
+      "galeria": []
+    },
+    {
+      "slug": "galpao-zona-oeste",
+      "titulo": "Reforma de Galpão na Zona Oeste do Rio de Janeiro: Transformação e Funcionalidade",
+      "bairro": "Zona Oeste",
+      "tipos": [
+        "galpao"
+      ],
+      "status": "placeholder",
+      "imagem": "galpao-zona-oeste",
+      "subtitulo": "",
+      "descricao": [
+        "Na Zona Oeste do Rio de Janeiro, uma reforma de galpão foi realizada com foco em transformar um espaço grande e sem uso otimizado em uma estrutura moderna e funcional. O objetivo do projeto foi atender às necessidades de empresas ou empreendedores que buscam um ambiente que combine praticidade, eficiência e uma estética contemporânea, sem perder a robustez e a versatilidade de um galpão.",
+        "A reforma na Zona Oeste foi planejada para atender a um layout aberto e flexível, ideal para uma variedade de usos, como armazenamento, operações industriais ou até mesmo como espaço comercial. A estrutura do galpão foi revitalizada para garantir que os espaços fossem aproveitados ao máximo, com foco em soluções que otimizassem a circulação, a iluminação e a segurança.",
+        "Na reforma do galpão, foi dada atenção especial à adaptação da planta para um uso mais eficiente. As divisões internas foram feitas de forma inteligente, criando áreas específicas para diferentes funções, como escritórios, áreas de produção ou estoques, sem perder a amplitude característica de um galpão. O uso de materiais como aço e concreto conferiu um visual industrial moderno, mantendo a resistência necessária para suportar atividades de maior porte.",
+        "A questão da iluminação também foi crucial. O projeto de iluminação foi pensado para garantir eficiência energética e segurança, com a instalação de luzes de alta performance que proporcionam visibilidade total durante o dia e a noite. O uso de janelas amplas e claraboias permitiu aproveitar a luz natural ao máximo, reduzindo a necessidade de iluminação artificial.",
+        "Outro ponto fundamental da reforma foi a infraestrutura do galpão. Todos os sistemas elétricos e hidráulicos foram renovados para atender às necessidades modernas, garantindo segurança e funcionalidade. O piso foi preparado para suportar cargas pesadas e garantir durabilidade, além de ser de fácil manutenção.",
+        "A área externa do galpão também recebeu melhorias, como a criação de um estacionamento amplo e acessível, além da instalação de sistemas de segurança e acessibilidade para garantir que o local fosse seguro e eficiente para os colaboradores ou clientes que circulam pela área.",
+        "A reforma de galpão na Zona Oeste do Rio de Janeiro foi um sucesso, oferecendo um espaço totalmente renovado, funcional e pronto para atender às exigências do mercado atual. O resultado final é um ambiente versátil, moderno e de alta performance, ideal para empresas ou empreendedores que buscam um local eficiente para expandir seus negócios ou realizar operações de grande porte."
+      ],
+      "escopo": "",
+      "prazo": "",
+      "videos": [],
+      "galeria": []
+    },
+    {
+      "slug": "galpao-zona-sul",
+      "titulo": "Reforma de Galpão na Zona Sul do Rio de Janeiro: Modernização e Versatilidade",
+      "bairro": "Zona Sul",
+      "tipos": [
+        "galpao"
+      ],
+      "status": "placeholder",
+      "imagem": "galpao-zona-sul",
+      "subtitulo": "",
+      "descricao": [
+        "Na Zona Sul do Rio de Janeiro, uma reforma de galpão foi realizada com o objetivo de transformar uma estrutura antiga e subutilizada em um espaço moderno, funcional e adaptável às necessidades do mercado atual. O projeto focou em otimizar a utilização do espaço, mantendo a robustez do galpão e oferecendo um ambiente versátil que pudesse ser facilmente ajustado para diversos tipos de atividades comerciais ou industriais.",
+        "A reforma na Zona Sul foi planejada para atender a um público que busca não apenas um ambiente funcional, mas também um espaço de alto padrão e que acompanhe as tendências contemporâneas de design e eficiência. O layout do galpão foi modificado para incluir áreas amplas, iluminadas e bem distribuídas, garantindo uma circulação fluida e o máximo aproveitamento do imóvel.",
+        "Na transformação do galpão, foram feitas alterações significativas na parte estrutural, com a inclusão de novas divisões que criaram ambientes específicos para diferentes usos. Escritórios, áreas de armazenamento e de produção foram separadas de maneira inteligente, sem perder a flexibilidade característica de um galpão. O uso de materiais modernos, como vidros e aço, conferiu ao espaço um visual contemporâneo, mantendo a resistência necessária para as operações de carga e descarga.",
+        "A iluminação foi outro ponto crucial da reforma. O projeto de iluminação foi desenvolvido para ser eficiente e sustentável, com a instalação de luminárias LED de baixo consumo energético, além de aproveitamento da luz natural com amplas janelas e claraboias. Isso não só melhora a iluminação do ambiente, mas também reduz os custos operacionais da empresa, trazendo mais sustentabilidade ao espaço.",
+        "Além disso, a infraestrutura foi completamente renovada, com a instalação de sistemas elétricos e hidráulicos de última geração, que atendem às necessidades de grandes operações. O piso do galpão foi reformado para suportar cargas pesadas e garantir maior durabilidade, ideal para armazenagem e movimentação de mercadorias de forma eficiente e segura.",
+        "O espaço externo do galpão também recebeu melhorias significativas. A criação de uma área de estacionamento ampla e organizada foi uma das prioridades, garantindo fácil acesso para veículos e colaboradores. Também foram implementados sistemas de segurança modernos, com câmeras e controle de acesso, para garantir a proteção do espaço e das mercadorias.",
+        "A reforma de galpão na Zona Sul do Rio de Janeiro resultou em um ambiente otimizado, moderno e seguro, perfeito para empresas ou negócios que buscam um local versátil e eficiente. Com a combinação de design contemporâneo e funcionalidade, o galpão agora atende às exigências de diferentes setores, sendo uma excelente opção para empresas que precisam de um espaço que alie praticidade, segurança e sofisticação"
+      ],
+      "escopo": "",
+      "prazo": "",
+      "videos": [],
+      "galeria": []
+    }
+  ]
+}
