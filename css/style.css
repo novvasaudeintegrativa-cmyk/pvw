@@ -873,3 +873,6 @@ h1,h2,h3,h4,.shead__h,.hs__head .h2,.band h2,.svb__h{letter-spacing:.02em;text-t
 .xband .xband__t,h3.xband__t{font-size:1.7rem!important;color:#fff!important;letter-spacing:.06em}
 .xband{background:#14228a!important}
 .xband .xband__l .i{color:#fff!important}
+.bac__im{position:relative;display:block}
+.bac__b{position:absolute;left:1.4%;width:23.4%;height:14.7%;display:flex;align-items:center;justify-content:center;text-align:center;background:#1a45f0;border-radius:6px;color:#fff;font-family:var(--f-t);font-size:clamp(1.2rem,2.4vw,1.75rem);line-height:1;letter-spacing:.04em;text-transform:uppercase;pointer-events:none}
+#antes-depois .h2,#antes-depois .h2 em{color:var(--ink)!important;font-size:clamp(3rem,9vw,5rem)!important;line-height:1}
