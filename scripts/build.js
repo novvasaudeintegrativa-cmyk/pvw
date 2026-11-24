@@ -216,11 +216,11 @@ function mapaSvg() {
     const ly = r[1] - 5;
     return `<g class="mp" data-n="${esc(p.n)}" style="--d:${(i * 0.37).toFixed(2)}s"><line class="mp__l" x1="${x.toFixed(1)}" y1="${y.toFixed(1)}" x2="${lx}" y2="${ly}"/><circle class="mp__r" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="6"/><circle class="mp__r mp__r2" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="6"/><circle class="mp__c" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="5"/><text class="mp__t" x="${r[0]}" y="${r[1]}" text-anchor="${r[2]}">${esc(p.n)}</text></g>`;
   }).join("");
-  return `<svg class="mapa__svg" viewBox="0 0 ${MAPA.w} ${MAPA.h}" role="img" aria-label="Mapa ilustrativo do Rio de Janeiro e Niterói com os bairros atendidos pela PVW"><path class="mapa__nit" d="${MAPA.nit}"/><path class="mapa__rio" d="${MAPA.rio}"/>${pts}</svg>`;
+  return `<svg class="mapa__svg" viewBox="0 0 ${MAPA.w} ${MAPA.h}" role="img" aria-label="Mapa do Rio de Janeiro e Niterói com os bairros atendidos pela PVW"><path class="mapa__nit" d="${MAPA.nit}"/><path class="mapa__rio" d="${MAPA.rio}"/>${pts}</svg>`;
 }
 const MOSAICO = ["st", "sq", "sq", "st", "st", "sq", "sq", "st"];
 function cardObra(o, linkPrefix, tam) {
-  const tag = o.status === "real" ? '<span class="tag tag--real">Obra real</span>' : '<span class="tag tag--ph">Foto ilustrativa</span>';
+  const tag = o.status === "real" ? '<span class="tag tag--real">Obra real</span>' : "";
   const meta = [o.bairro || "Bairro a informar", o.tipos.map(labelTipo).join(", ")].join(" · ");
   const img = pic(`img/obras/${o.imagem}-card.webp`, o.titulo, 720, 450).replace(/(<img src="[^"]*-card\.webp")/, `$1 srcset="${R}img/obras/${o.imagem}-card.webp 720w${exists(`img/obras/${o.imagem}-lg.webp`) ? `, ${R}img/obras/${o.imagem}-lg.webp 1280w` : ""}" sizes="(min-width:960px) 50vw, 100vw"`);
   return `<article class="oc${tam ? " m-" + tam : ""}" data-bairro="${esc(o.bairro)}" data-tipos="${esc(o.tipos.join(" "))}">
@@ -295,7 +295,6 @@ function home() {
       </div>
     </div>
     <p class="empty" id="f-vazio" hidden>Nenhuma obra com esses filtros.</p>
-    <p class="note">As fotos marcadas como "Foto ilustrativa" são provisórias e serão trocadas por fotos reais das obras.</p>
   </div>
 </section>
 
@@ -306,7 +305,7 @@ function home() {
       ${c.intro.map((p) => `<p>${esc(p)}</p>`).join("")}
       <p>Somos uma empresa só para cuidar da sua obra: a gente coordena os profissionais, acompanha cada etapa e mantém você informada do começo ao fim. Você não precisa correr atrás de pedreiro, eletricista, pintor ou gesseiro: fala com a PVW e a PVW resolve.</p>
     </div>
-    <figure class="sobre__foto"><img src="img/obras/sobre-obra.webp" width="1400" height="1400" loading="lazy" decoding="async" alt="Equipe da obra reunida em volta de uma planta, em uma obra de alvenaria"><span class="tag tag--ph">Imagem ilustrativa</span></figure>
+    <figure class="sobre__foto"><img src="img/obras/sobre-obra.webp" width="1400" height="1400" loading="lazy" decoding="async" alt="Equipe da obra reunida em volta de uma planta, em uma obra de alvenaria"></figure>
   </div>
 </section>
 
@@ -333,7 +332,7 @@ function home() {
 </section>
 
 <section class="split" id="processo">
-  <div class="split__img"><img src="img/obras/processo-obra.webp" width="1400" height="1400" loading="lazy" decoding="async" alt="Engenheiro com prancheta conversando com a cliente, enquanto pintores trabalham na reforma ao fundo"><span class="tag tag--ph">Imagem ilustrativa</span></div>
+  <div class="split__img"><img src="img/obras/processo-obra.webp" width="1400" height="1400" loading="lazy" decoding="async" alt="Engenheiro com prancheta conversando com a cliente, enquanto pintores trabalham na reforma ao fundo"></div>
   <div class="split__panel">
     <div class="split__in">
       <h2 class="h2">Reformar nunca foi tão fácil</h2>
@@ -444,7 +443,7 @@ function paginaObra(o, i) {
   const antesDepois = `<div class="ba2">${ph("Foto do antes: a inserir")}${ph("Foto do depois: a inserir")}</div>`;
   const videos = o.videos.length ? `<h2 class="h2 h2--s">Etapas da obra</h2><div class="vids">${o.videos.map((v) => `<figure><video controls preload="none" poster="${R}${v.poster}" playsinline><source src="${R}${v.src}" type="video/mp4"></video><figcaption>${esc(v.legenda)}</figcaption></figure>`).join("")}</div>` : "";
   const outras = obrasHome.filter((x) => x.slug !== o.slug).slice(0, 3);
-  const status = o.status === "real" ? '<span class="tag tag--real tag--inline">Obra real</span>' : '<span class="tag tag--ph tag--inline">Foto e dados ilustrativos</span>';
+  const status = o.status === "real" ? '<span class="tag tag--real tag--inline">Obra real</span>' : "";
   const html = [];
   html.push(head({
     title, desc, canonical: url, image: `${site.dominio}/img/obras/${o.imagem}-card.webp`,

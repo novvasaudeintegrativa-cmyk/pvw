@@ -18,7 +18,7 @@ Textos do site, depoimentos, FAQ, serviços e parceiros ficam em `data/conteudo.
 
 ## Marcado como placeholder (a trocar)
 
-- Fotos das obras com a etiqueta "Foto ilustrativa" (todas, menos o muro de divisa, que é obra real em vídeo).
+- Fotos das obras: são imagens de banco e geradas; troque por fotos reais das obras quando tiver.
 - Escopo e prazo de cada obra: "[a informar]".
 - A foto do hero (print enviado pelo dono, de baixa resolução).
 
