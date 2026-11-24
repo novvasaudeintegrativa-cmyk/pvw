@@ -869,3 +869,7 @@ h1,h2,h3,h4,.shead__h,.hs__head .h2,.band h2,.svb__h{letter-spacing:.02em;text-t
 .steps2__n{font-size:1.5rem}
 .tq4__c figcaption b{font-size:1.4rem}
 .mp__t{font-size:17px}
+
+.xband .xband__t,h3.xband__t{font-size:1.7rem!important;color:#fff!important;letter-spacing:.06em}
+.xband{background:#14228a!important}
+.xband .xband__l .i{color:#fff!important}
