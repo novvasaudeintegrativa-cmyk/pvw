@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-360 -450 1440 1800" role="img" aria-label="Ilustração de uma casa em obra, com andaime, no estilo de planta técnica">
+  <defs>
+    <pattern id="g" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#1d2740" stroke-width="1"/></pattern>
+    <pattern id="g2" width="200" height="200" patternUnits="userSpaceOnUse"><path d="M200 0H0V200" fill="none" stroke="#26335a" stroke-width="1.5"/></pattern>
+  </defs>
+  <rect x="-360" y="-450" width="1440" height="1800" fill="#0e1116"/>
+  <rect x="-360" y="-450" width="1440" height="1800" fill="url(#g)"/>
+  <rect x="-360" y="-450" width="1440" height="1800" fill="url(#g2)"/>
+  <circle cx="360" cy="470" r="300" fill="#2a45eb" opacity=".16"/>
+  <circle cx="360" cy="470" r="300" fill="none" stroke="#8fa3ff" stroke-width="1.5" stroke-dasharray="6 10" opacity=".6"/>
+
+  <!-- chão -->
+  <path d="M70 690H650" stroke="#fff" stroke-width="3"/>
+  <path d="M70 690l-14 18M110 690l-14 18M150 690l-14 18M190 690l-14 18M230 690l-14 18M270 690l-14 18M310 690l-14 18M350 690l-14 18M390 690l-14 18M430 690l-14 18M470 690l-14 18M510 690l-14 18M550 690l-14 18M590 690l-14 18M630 690l-14 18" stroke="#5f6f9e" stroke-width="2"/>
+
+  <!-- casa -->
+  <rect x="170" y="440" width="340" height="250" fill="#16213f" stroke="#fff" stroke-width="3"/>
+  <polygon points="140,440 340,290 540,440" fill="#2a45eb" stroke="#fff" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M140 440H540" stroke="#fff" stroke-width="3"/>
+  <rect x="430" y="300" width="36" height="86" fill="#16213f" stroke="#fff" stroke-width="3"/>
+  <rect x="300" y="570" width="64" height="120" fill="#0e1116" stroke="#fff" stroke-width="3"/>
+  <circle cx="350" cy="634" r="4" fill="#fff"/>
+  <g stroke="#fff" stroke-width="3" fill="#0e1116">
+    <rect x="205" y="490" width="70" height="70"/><path d="M240 490V560M205 525H275" fill="none"/>
+    <rect x="405" y="490" width="70" height="70"/><path d="M440 490V560M405 525H475" fill="none"/>
+  </g>
+  <!-- tijolos na parede em obra -->
+  <g stroke="#8fa3ff" stroke-width="1.5" opacity=".7" fill="none">
+    <path d="M170 600H300M170 630H300M170 660H300M200 600V630M250 630V660M200 660V690M380 600H510M380 630H510M380 660H510M420 600V630M470 630V660M440 660V690"/>
+  </g>
+
+  <!-- andaime -->
+  <g stroke="#fff" stroke-width="3" fill="none">
+    <path d="M560 320V690M650 320V690"/>
+    <path d="M560 400H650M560 480H650M560 560H650M560 640H650"/>
+    <path d="M560 400L650 480M650 400L560 480M560 560L650 640M650 560L560 640"/>
+  </g>
+  <rect x="548" y="316" width="114" height="10" fill="#fff"/>
+  <rect x="548" y="476" width="114" height="8" fill="#8fa3ff"/>
+
+  <!-- cota (medida) -->
+  <g stroke="#8fa3ff" stroke-width="2" fill="none">
+    <path d="M170 735H510M170 722V748M510 722V748"/>
+    <path d="M170 735l14-7v14zM510 735l-14-7v14z" fill="#8fa3ff"/>
+  </g>
+  <text x="340" y="772" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="20" letter-spacing="4" fill="#fff">SUA CASA NOVA</text>
+
+  <!-- ferramentas: régua e nível -->
+  <g transform="translate(110 820)">
+    <rect x="0" y="0" width="300" height="34" rx="3" fill="#2a45eb" stroke="#fff" stroke-width="2.5"/>
+    <path d="M20 0v12M40 0v18M60 0v12M80 0v18M100 0v12M120 0v18M140 0v12M160 0v18M180 0v12M200 0v18M220 0v12M240 0v18M260 0v12M280 0v18" stroke="#fff" stroke-width="2"/>
+  </g>
+  <g transform="translate(450 818)">
+    <rect x="0" y="0" width="160" height="38" rx="5" fill="#fff"/>
+    <rect x="52" y="9" width="56" height="20" rx="10" fill="#0e1116"/>
+    <circle cx="80" cy="19" r="6" fill="#8fa3ff"/>
+  </g>
+
+  <!-- capacete -->
+  <g transform="translate(70 120)">
+    <path d="M0 80a70 70 0 0 1 140 0z" fill="#fff"/>
+    <rect x="-14" y="80" width="168" height="16" rx="8" fill="#fff"/>
+    <rect x="58" y="-14" width="24" height="34" rx="6" fill="#2a45eb" stroke="#fff" stroke-width="3"/>
+  </g>
+
+  <!-- selo -->
+  <g transform="translate(470 110)">
+    <rect width="200" height="72" fill="none" stroke="#fff" stroke-width="2.5"/>
+    <path d="M0 36H200" stroke="#fff" stroke-width="1.5"/>
+    <text x="100" y="26" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="17" letter-spacing="3" fill="#fff">PVW</text>
+    <text x="100" y="58" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="11.5" letter-spacing="2" fill="#8fa3ff">CONSTRUÇÃO E REFORMAS</text>
+  </g>
+</svg>

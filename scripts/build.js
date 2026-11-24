@@ -123,7 +123,16 @@ function header(isHome) {
 </header>`;
 }
 
-function footer() {
+function caixaContato() {
+  return `    <div class="ft__box">
+      <div class="ft__item">${ICONS.pin}<div><h3>Atendimento</h3><p>${esc(conteudo.area.regioes.join(", "))}</p>${site.endereco ? `<p>${esc(site.endereco)}</p>` : ""}</div></div>
+      <div class="ft__item">${ICONS.phone}<div><h3>Ligue ou chame no WhatsApp</h3><p><a href="tel:${site.telefone}">${esc(site.whatsappTexto)}</a></p></div></div>
+      <div class="ft__item">${ICONS.mail}<div><h3>E-mail</h3><p><a href="mailto:${site.email}">${esc(site.email)}</a></p></div></div>
+      <div class="ft__item">${ICONS.insta}<div><h3>Instagram</h3><p><a href="${site.instagramUrl}" target="_blank" rel="noopener">${esc(site.instagramUsuario)}</a></p>${site.horario ? `<p>${esc(site.horario)}</p>` : ""}</div></div>
+    </div>
+`;
+}
+function footer(semCaixa) {
   const dados = [];
   if (site.cnpj) dados.push(`CNPJ ${esc(site.cnpj)}`);
   if (site.registroProfissional) dados.push(esc(site.registroProfissional));
@@ -131,11 +140,7 @@ function footer() {
   const navLinks = [["obras", "Obras"], ["processo", "Processo"], ["servicos", "Serviços"], ["depoimentos", "Depoimentos"], ["faq", "FAQ"], ["contato", "Contato"]];
   return `<footer class="ft">
   <div class="wrap">
-    <div class="ft__box">
-      <div class="ft__item">${ICONS.pin}<div><h3>Atendimento</h3><p>${esc(conteudo.area.regioes.join(", "))}</p>${site.endereco ? `<p>${esc(site.endereco)}</p>` : ""}</div></div>
-      <div class="ft__item">${ICONS.phone}<div><h3>Ligue ou chame no WhatsApp</h3><p><a href="tel:${site.telefone}">${esc(site.whatsappTexto)}</a></p></div></div>
-      <div class="ft__item">${ICONS.mail}<div><h3>E-mail</h3><p><a href="mailto:${site.email}">${esc(site.email)}</a></p></div></div>
-    </div>
+    ${semCaixa ? "" : caixaContato()}
     <div class="ft__cols">
       <div><h3>Sobre a PVW</h3><p>${esc(conteudo.rodape)}</p><a class="ft__more" href="${R}index.html#sobre">Ler mais</a></div>
       <div><h3>Navegação</h3><ul class="ft__nav">${navLinks.map(([id, t]) => `<li><a href="${R}index.html#${id}">${t}</a></li>`).join("")}</ul></div>
@@ -146,7 +151,6 @@ function footer() {
         <a href="${site.instagramUrl}" target="_blank" rel="noopener" aria-label="Instagram ${esc(site.instagramUsuario)}">${ICONS.insta}</a>
         ${site.googleMeuNegocioUrl ? `<a href="${site.googleMeuNegocioUrl}" target="_blank" rel="noopener" aria-label="PVW no Google">${ICONS.star}</a>` : ""}
       </div>
-      ${waLink("btn--cta", "Solicite um orçamento")}
     </div>
     ${dados.length ? `<p class="ft__dados">${dados.join(" · ")}</p>` : ""}
     <p class="ft__copy">© <span id="ano">2026</span> | ${esc(site.nome)}</p>
@@ -192,17 +196,32 @@ const sociais = () => {
 };
 
 /* ---------- cartões de obra ---------- */
-/* padrão do mosaico (l = grande 2x2, w = largo 2x1, t = alto 1x2, s = pequeno). O mesmo padrão existe em js/main.js */
-const MOSAICO = ["l", "s", "s", "w", "t", "s", "w", "s", "s", "s"];
+/* padrão do mosaico em 4 colunas: st = formato story (9:16), sq = quadrado. Encaixa em blocos de 8 fotos. O mesmo padrão existe em js/main.js */
+/* posições aproximadas do centro de cada bairro (para o mapa) */
+const COORDS = { "Leblon": [-22.9846, -43.224], "Ipanema": [-22.9838, -43.2096], "Botafogo": [-22.9519, -43.1832], "Catete": [-22.9266, -43.176], "Flamengo": [-22.934, -43.1753], "Humaitá": [-22.9556, -43.2], "Gávea": [-22.9778, -43.2317], "Barra da Tijuca": [-23.0003, -43.3659], "Recreio": [-23.0187, -43.4658], "Méier": [-22.9019, -43.2778], "Vila da Penha": [-22.842, -43.3156], "Turiaçu": [-22.8624, -43.34], "Praça Seca": [-22.8987, -43.3507] };
+const PONTOS_MAPA = [...conteudo.area.bairros.filter((b) => COORDS[b]).map((b) => ({ n: b, c: COORDS[b] })), { n: "Niterói", c: [-22.8832, -43.1034] }];
+const MAPA = read("mapa-rio.json");
+/* posição do nome de cada ponto no mapa: [x, y, alinhamento] (em unidades do desenho) */
+const ROTULOS = { "Gávea": [690, 372, "end"], "Leblon": [745, 402, "end"], "Ipanema": [800, 398, "start"], "Humaitá": [742, 282, "end"], "Botafogo": [860, 318, "start"], "Flamengo": [864, 284, "start"], "Catete": [792, 234, "end"], "Barra da Tijuca": [582, 394, "middle"], "Recreio": [454, 420, "middle"], "Méier": [695, 204, "middle"], "Vila da Penha": [647, 120, "middle"], "Turiaçu": [588, 160, "end"], "Praça Seca": [572, 228, "end"], "Niterói": [938, 192, "start"] };
+function mapaSvg() {
+  const pr = (c) => [(c[1] - MAPA.lon0) * MAPA.cosl * MAPA.k, (MAPA.lat0 - c[0]) * MAPA.k];
+  const pts = PONTOS_MAPA.map((p, i) => {
+    const [x, y] = pr(p.c), r = ROTULOS[p.n] || [x, y - 16, "middle"];
+    const lx = r[2] === "end" ? r[0] + 4 : r[2] === "start" ? r[0] - 4 : r[0];
+    const ly = r[1] - 5;
+    return `<g class="mp" data-n="${esc(p.n)}" style="--d:${(i * 0.37).toFixed(2)}s"><line class="mp__l" x1="${x.toFixed(1)}" y1="${y.toFixed(1)}" x2="${lx}" y2="${ly}"/><circle class="mp__r" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="6"/><circle class="mp__r mp__r2" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="6"/><circle class="mp__c" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="5"/><text class="mp__t" x="${r[0]}" y="${r[1]}" text-anchor="${r[2]}">${esc(p.n)}</text></g>`;
+  }).join("");
+  return `<svg class="mapa__svg" viewBox="0 0 ${MAPA.w} ${MAPA.h}" role="img" aria-label="Mapa ilustrativo do Rio de Janeiro e Niterói com os bairros atendidos pela PVW"><path class="mapa__nit" d="${MAPA.nit}"/><path class="mapa__rio" d="${MAPA.rio}"/>${pts}</svg>`;
+}
+const MOSAICO = ["st", "sq", "sq", "st", "st", "sq", "sq", "st"];
 function cardObra(o, linkPrefix, tam) {
   const tag = o.status === "real" ? '<span class="tag tag--real">Obra real</span>' : '<span class="tag tag--ph">Foto ilustrativa</span>';
   const meta = [o.bairro || "Bairro a informar", o.tipos.map(labelTipo).join(", ")].join(" · ");
   const img = pic(`img/obras/${o.imagem}-card.webp`, o.titulo, 720, 450).replace(/(<img src="[^"]*-card\.webp")/, `$1 srcset="${R}img/obras/${o.imagem}-card.webp 720w${exists(`img/obras/${o.imagem}-lg.webp`) ? `, ${R}img/obras/${o.imagem}-lg.webp 1280w` : ""}" sizes="(min-width:960px) 50vw, 100vw"`);
   return `<article class="oc${tam ? " m-" + tam : ""}" data-bairro="${esc(o.bairro)}" data-tipos="${esc(o.tipos.join(" "))}">
   <a class="oc__a" href="${linkPrefix}obras/${o.slug}/index.html">
-    <div class="oc__img">${img}${tag}</div>
-    <span class="oc__hover" aria-hidden="true"><small>${esc(o.tipos.map(labelTipo).join(", "))}</small><strong>${esc(o.titulo)}</strong><em>Ver obra</em></span>
-    <div class="oc__b">${ICONS.arrow}<div><p class="oc__m">${esc(meta)}</p><h3>${esc(o.titulo)}</h3></div></div>
+    <div class="oc__img">${img}${tag}<span class="oc__hover" aria-hidden="true"><small>${esc(o.tipos.map(labelTipo).join(", "))}</small><strong>${esc(o.titulo)}</strong><em>Ver obra</em></span></div>
+    <div class="oc__cap"><p><b>${esc(o.bairro || "Bairro a informar")}</b> ${esc(o.titulo)}</p></div>
   </a>
 </article>`;
 }
@@ -256,48 +275,60 @@ function home() {
   </div>
 </div>
 
-<section class="nums" aria-label="Números da PVW">
-  <div class="wrap">
-    <div class="nums__grid">
-      <div><b class="num" data-count="${site.numeros.anos}">+${site.numeros.anos}</b><span>Anos de Experiência</span></div>
-      <div><b class="num" data-count="${site.numeros.m2}" data-suffix="m²">+${nf(site.numeros.m2)}m²</b><span>Construídos</span></div>
-      <div><b class="num" data-count="${site.numeros.projetos}">+${site.numeros.projetos}</b><span>Projetos Entregues</span></div>
-    </div>
-    <ul class="selos">${c.selos.map((s) => `<li>${ICONS.check}${esc(s)}</li>`).join("")}</ul>
-  </div>
-</section>
-
 <section class="sec" id="obras">
   <div class="wrap">
-    <h2 class="h2">Conheça algumas de nossas Obras Executadas</h2>
-    <p class="lede">${esc(c.portfolioTexto)}</p>
-    <ul class="checks">${c.portfolioLista.map((t) => `<li>${ICONS.check}<span>${esc(t)}</span></li>`).join("")}</ul>
+    <div class="shead">
+      <div class="shead__t"><h2 class="shead__h">Projetos Recentes</h2><p class="shead__s">Alguns de nossos projetos recentes</p></div>
+      <div class="shead__d">
+        <p>${esc(c.portfolioTexto)}</p>
+        <ul class="checks checks--s">${c.portfolioLista.map((t) => `<li>${ICONS.check}<span>${esc(t)}</span></li>`).join("")}</ul>
+      </div>
+    </div>
     <div class="filtros" role="group" aria-label="Filtrar obras">
       <label class="sel"><span>Bairro</span><select id="f-bairro"><option value="">Todos os bairros</option>${bairros.map((b) => `<option>${esc(b)}</option>`).join("")}</select></label>
       <div class="chips" id="f-tipos"><button type="button" class="chip" data-tipo="" aria-pressed="true">Todos</button>${tiposUsados.map((t) => `<button type="button" class="chip" data-tipo="${t}" aria-pressed="false">${esc(tipos[t])}</button>`).join("")}</div>
       <button type="button" class="chip chip--sh" id="f-shuffle" aria-label="Misturar a ordem e o tamanho das fotos">Misturar</button>
     </div>
     <p class="count" id="f-count" role="status" aria-live="polite">${obras.length} obras</p>
-    <div class="ogrid" id="ogrid">
-      ${obras.map((o, i) => cardObra(o, "", MOSAICO[i % MOSAICO.length])).join("\n      ")}
+    <div class="omos">
+      <div class="ogrid" id="ogrid">
+        ${obras.map((o, i) => cardObra(o, "", MOSAICO[i % MOSAICO.length])).join("\n        ")}
+      </div>
     </div>
     <p class="empty" id="f-vazio" hidden>Nenhuma obra com esses filtros.</p>
     <p class="note">As fotos marcadas como "Foto ilustrativa" são provisórias e serão trocadas por fotos reais das obras.</p>
   </div>
 </section>
 
-<section class="sec" id="sobre">
+<section class="sec sec--azul" id="sobre">
   <div class="wrap sobre">
     <div class="sobre__txt">
-      <h2 class="h2">Sobre a PVW</h2>
+      <div class="shead__t sobre__h"><h2 class="shead__h">Sobre nós</h2><p class="shead__s">Quem somos</p></div>
       ${c.intro.map((p) => `<p>${esc(p)}</p>`).join("")}
+      <p>Somos uma empresa só para cuidar da sua obra: a gente coordena os profissionais, acompanha cada etapa e mantém você informada do começo ao fim. Você não precisa correr atrás de pedreiro, eletricista, pintor ou gesseiro: fala com a PVW e a PVW resolve.</p>
+      <div class="sobre__nums">
+        <div><b class="num" data-count="${site.numeros.anos}">+${site.numeros.anos}</b><span>Anos de experiência</span></div>
+        <div><b class="num" data-count="${site.numeros.m2}" data-suffix="m²">+${nf(site.numeros.m2)}m²</b><span>Construídos</span></div>
+        <div><b class="num" data-count="${site.numeros.projetos}">+${site.numeros.projetos}</b><span>Projetos entregues</span></div>
+      </div>
+      <ul class="sobre__selos">${c.selos.map((x) => `<li>${ICONS.check}${esc(x)}</li>`).join("")}</ul>
     </div>
-    <figure class="frame"><img src="img/obras/sobre.webp" width="720" height="900" loading="lazy" decoding="async" alt="Muro de divisa pronto, com luminárias e plantas: obra real da PVW"></figure>
+    <figure class="pessoas"><img src="img/obras/sobre-pessoas.webp" width="785" height="592" loading="lazy" decoding="async" alt="Engenheiro e arquiteta analisando uma planta de obra"><span class="tag tag--ph">Foto ilustrativa</span></figure>
+  </div>
+</section>
+
+<section class="sec sec--ice" id="atendimento">
+  <div class="wrap">
+    <div class="shead">
+      <div class="shead__t"><h2 class="shead__h">Onde atendemos</h2><p class="shead__s">Rio de Janeiro e Niterói</p></div>
+      <div class="shead__d"><p>Atendemos ${c.area.regioes.map(esc).join(", ")}. Veja no mapa os bairros onde a PVW atua.</p></div>
+    </div>
+    <div class="mapa" id="mapa">${mapaSvg()}</div>
   </div>
 </section>
 
 <section class="split" id="processo">
-  <div class="split__img"><img src="img/obras/processo.webp" width="720" height="1280" loading="lazy" decoding="async" alt="Obra da PVW em andamento"></div>
+  <div class="split__img"><img src="img/ilustracao-obra.svg" width="720" height="900" loading="lazy" decoding="async" alt="Ilustração de uma casa em obra, com andaime e régua, no estilo de planta técnica"></div>
   <div class="split__panel">
     <div class="split__in">
       <h2 class="h2">Reformar nunca foi tão fácil</h2>
@@ -317,12 +348,10 @@ function home() {
   </div>
 </section>
 
-<section class="sec sec--ice" id="servicos">
-  <div class="wrap">
-    <h2 class="h2">Nossos Serviços: Soluções Completas e de Alta Qualidade</h2>
-    <div class="svc">
-      ${c.servicos.map((s) => `<article class="svc__c"><img src="img/svc-${s.foto}.webp" width="600" height="500" loading="lazy" decoding="async" alt=""><span class="svc__i">${ICONS[s.icone]}</span><div class="svc__o"><h3>${esc(s.titulo)}</h3><p>${esc(s.texto)}</p></div></article>`).join("\n      ")}
-    </div>
+<section class="svb" id="servicos">
+  <div class="wrap svb__head"><h2 class="svb__h">Nossos Serviços: Soluções Completas e de Alta Qualidade</h2></div>
+  <div class="wrap svb__grid">
+    ${c.servicos.map((s) => `<article class="svb__i"><span class="svb__ic">${ICONS[s.icone]}</span><h3>${esc(s.titulo)}</h3><p>${esc(s.texto)}</p></article>`).join("\n    ")}
   </div>
 </section>
 
@@ -330,17 +359,17 @@ function home() {
   <div class="wrap band__in"><h2>${esc(c.ctaFinal.titulo)}</h2>${waLink("btn--cta btn--lg", "Solicite um orçamento")}</div>
 </section>
 
-<section class="sec sec--dark" id="antes-depois">
+<section class="sec sec--ice" id="antes-depois">
   <div class="wrap">
     <div class="hs__head">
-      <h2 class="h2">Antes e <em>depois</em></h2>
+      <h2 class="h2">Antes e <em>Depois</em></h2>
       <div class="hs__ctl">
         <button type="button" class="hs__btn hs__btn--prev" data-dir="-1" aria-label="Fotos anteriores">${ICONS.arrow}</button>
         <button type="button" class="hs__btn" data-dir="1" aria-label="Próximas fotos">${ICONS.arrow}</button>
       </div>
     </div>
     <div class="hscroll bagrid" tabindex="0" role="region" aria-label="Fotos de antes e depois (role para o lado)">
-      ${Array.from({ length: 9 }, (_, i) => `<figure class="bac"><span class="bac__n">${String(i + 1).padStart(2, "0")}</span>${pic(`img/antes-depois-${i + 1}.webp`, `Obra executada pela PVW: foto do antes e do depois (${i + 1})`, 640, 968)}</figure>`).join("\n      ")}
+      ${Array.from({ length: 9 }, (_, i) => `<figure class="bac">${pic(`img/antes-depois-${i + 1}.webp`, `Obra executada pela PVW: foto do antes e do depois (${i + 1})`, 640, 968)}<figcaption class="bac__c"><b>Antes e depois</b> ${String(i + 1).padStart(2, "0")}</figcaption></figure>`).join("\n      ")}
     </div>
   </div>
 </section>
@@ -357,18 +386,15 @@ function home() {
 
 <section class="sec sec--tq" id="depoimentos">
   <div class="wrap">
-    <div class="tq" id="tq">
-      <figure class="tq__photo"><img id="tq-photo" src="img/dep-${c.depoimentos[0].foto}-lg.webp" width="378" height="378" alt="Foto de ${esc(c.depoimentos[0].nome)}"></figure>
-      <div class="tq__panel">
-        <h2 class="tq__t">Quem já contratou a PVW</h2>
-        <div class="tq__track" id="tq-track" tabindex="0" role="region" aria-label="Depoimentos de clientes">
-          ${c.depoimentos.map((d) => `<div class="tq__slide" data-foto="img/dep-${d.foto}-lg.webp" data-nome="${esc(d.nome)}"><span class="tq__q"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 17h4l2-4V7H5v6h3zm9 0h4l2-4V7h-6v6h3z"/></svg></span><blockquote><p>${esc(d.texto)}</p></blockquote><p class="tq__who"><b>${esc(d.nome)}</b><span>${esc(d.profissao)}</span>${d.obra ? `<em>${esc(d.obra)}</em>` : ""}</p></div>`).join("\n          ")}
-        </div>
+    <div class="hs__head">
+      <h2 class="h2">Quem Já Contratou a PVW</h2>
+      <div class="hs__ctl">
+        <button type="button" class="hs__btn hs__btn--prev" data-dir="-1" aria-label="Depoimentos anteriores">${ICONS.arrow}</button>
+        <button type="button" class="hs__btn" data-dir="1" aria-label="Próximos depoimentos">${ICONS.arrow}</button>
       </div>
-      <div class="tq__ctl">
-        <button type="button" class="tq__btn tq__btn--prev" data-dir="-1" aria-label="Depoimento anterior">${ICONS.arrow}</button>
-        <button type="button" class="tq__btn" data-dir="1" aria-label="Próximo depoimento">${ICONS.arrow}</button>
-      </div>
+    </div>
+    <div class="hscroll tq4" tabindex="0" role="region" aria-label="Depoimentos de clientes (role para o lado)">
+      ${c.depoimentos.map((d) => `<figure class="tq4__c"><img class="tq4__ph" src="img/dep-${d.foto}-lg.webp" width="378" height="378" loading="lazy" alt="Foto de ${esc(d.nome)}"><span class="tq4__q"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 17h4l2-4V7H5v6h3zm9 0h4l2-4V7h-6v6h3z"/></svg></span><blockquote><p>${esc(d.texto)}</p></blockquote><figcaption><b>${esc(d.nome)}</b><span>${esc(d.profissao)}</span>${d.obra ? `<em>${esc(d.obra)}</em>` : ""}</figcaption></figure>`).join("\n      ")}
     </div>
     ${sociais()}
   </div>
@@ -393,14 +419,6 @@ function home() {
 <section class="sec contato" id="contato">
   <div class="wrap">
     <h2 class="h2">Solicite um Orçamento!</h2>
-    <p class="lede">${esc(c.ctaFinal.texto)}</p>
-    ${waLink("btn--cta btn--lg", "Solicite um orçamento")}
-    <ul class="cl">
-      <li>${ICONS.phone}<a href="tel:${site.telefone}">${esc(site.whatsappTexto)}</a></li>
-      <li>${ICONS.mail}<a href="mailto:${site.email}">${esc(site.email)}</a></li>
-      <li>${ICONS.insta}<a href="${site.instagramUrl}" target="_blank" rel="noopener">${esc(site.instagramUsuario)}</a></li>
-      ${site.horario ? `<li>${esc(site.horario)}</li>` : ""}
-    </ul>
   </div>
 </section>
 </main>`);

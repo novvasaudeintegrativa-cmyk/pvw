@@ -49,6 +49,7 @@
     /* arrastar com o mouse (no celular a rolagem por toque já funciona) */
     var down = false, sx = 0, sl = 0, moved = false;
     box.addEventListener("pointerdown", function (e) {
+      if (box.hasAttribute("data-pin")) return;
       if (e.pointerType !== "mouse" || e.button !== 0) return;
       down = true; moved = false; sx = e.clientX; sl = box.scrollLeft;
     });
@@ -64,6 +65,56 @@
       if (e.key === "ArrowLeft") { box.scrollBy({ left: -360, behavior: "smooth" }); }
     });
   });
+
+  /* ---------- rolagem horizontal guiada pela rolagem da página: a seção fica fixa e as fotos andam para o lado até o fim ---------- */
+  (function () {
+    if (reduce) return;
+    var items = [];
+    $$(".hscroll").forEach(function (box) {
+      var sec = box.closest("section"); if (!sec) return;
+      var pin = document.createElement("div"); pin.className = "pin";
+      sec.parentNode.insertBefore(pin, sec); pin.appendChild(sec);
+      sec.classList.add("pin__sec"); box.setAttribute("data-pin", "1");
+      pin.style.background = getComputedStyle(sec).backgroundColor;
+      items.push({ pin: pin, sec: sec, box: box });
+    });
+    if (!items.length) return;
+    var hd = document.querySelector(".hd");
+    /* altura do cabeçalho enquanto a página rola (a faixa de cima sai de vista) */
+    function hdH() { if (!hd) return 0; return Math.max(0, hd.offsetHeight + (parseFloat(getComputedStyle(hd).top) || 0)); }
+    function size() {
+      var h = hdH();
+      items.forEach(function (it) {
+        it.sec.style.minHeight = "calc(100vh - " + h + "px)"; it.sec.style.top = h + "px";
+        it.max = Math.max(0, it.box.scrollWidth - it.box.clientWidth);
+        it.pin.style.height = (it.sec.offsetHeight + it.max) + "px";
+      });
+      update();
+    }
+    function update() {
+      var h = hdH(), y = window.scrollY;
+      items.forEach(function (it) {
+        if (!it.max) return;
+        var start = it.pin.getBoundingClientRect().top + y - h;
+        it.box.scrollLeft = Math.max(0, Math.min(it.max, y - start));
+      });
+    }
+    window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", size);
+    window.addEventListener("load", size);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(size);
+    size();
+    /* setas: andam a página (e, com ela, as fotos) */
+    $$(".hs__btn").forEach(function (b) {
+      b.addEventListener("click", function (e) {
+        var head = b.closest(".hs__head"), box = head && head.nextElementSibling;
+        if (!box || !box.hasAttribute("data-pin")) return;
+        e.stopImmediatePropagation();
+        var card = box.firstElementChild, step = (card ? card.offsetWidth : 300) + 24;
+        window.scrollBy({ top: parseInt(b.getAttribute("data-dir"), 10) * step, behavior: "smooth" });
+      }, true);
+    });
+  })();
 
   /* ---------- depoimentos: foto e painel sincronizados com a rolagem ---------- */
   (function () {
@@ -105,7 +156,7 @@
     var sel = [
       ".nums__grid > div", ".selos li", ".h2", ".eyebrow", ".lede", ".checks li", ".filtros", ".count",
       ".oc", ".step", ".intro p", ".expertise li", ".svc__c", ".band h2", ".band .btn", ".bagrid", ".vid__txt", ".vid__frame",
-      ".tq", ".socs", ".ft__box", ".ft__cols > div", ".logos li", ".faq details", ".contato .lede", ".contato .btn", ".cl li", ".note",
+      ".tq4", ".socs", ".ft__box", ".ft__cols > div", ".logos li", ".faq details", ".contato .lede", ".contato .btn", ".cl li", ".note",
       ".ohero .bc", ".ohero h1", ".ohero .tag", ".ohero__img", ".odet__txt > *", ".odet__box", ".vids figure", ".gal > *", ".ba2 > *"
     ].join(",");
     var seen = [];
@@ -155,18 +206,22 @@
     var grid = $("#ogrid"); if (!grid) return;
     var sel = $("#f-bairro"), chips = $$("#f-tipos .chip"), count = $("#f-count"), vazio = $("#f-vazio");
     var cards = $$(".oc", grid), tipo = "";
-    /* mosaico: tamanhos das fotos conforme a quantidade visível (l grande 2x2, w largo, t alto, s pequeno) */
-    var PAT = ["l", "s", "s", "w", "t", "s", "w", "s", "s", "s"];
-    function sizes(n) {
-      if (n === 1) return ["l"]; if (n === 2) return ["l", "l"]; if (n === 3) return ["l", "w", "w"]; if (n === 4) return ["l", "s", "s", "w"];
-      var a = []; for (var i = 0; i < n; i++) a.push(PAT[i % PAT.length]); return a;
-    }
+    /* mosaico: fotos quadradas (sq) e em formato story (st), alternando. Em 4 colunas cada coluna fecha com 1 quadrada + 1 story */
+    var PAT4 = ["st", "sq", "st", "sq", "st", "st", "sq", "sq"], PAT2 = ["st", "sq", "sq", "st"];
+    var mq = window.matchMedia("(min-width:960px)");
+    function pat() { return mq.matches ? PAT4 : PAT2; }
+    function sizes(n, off) { var P = pat(), a = []; for (var i = 0; i < n; i++) a.push(P[(i + (off || 0)) % P.length]); return a; }
     function visible() { return cards.filter(function (c) { return !c.hidden; }); }
-    function layout() {
-      var vis = visible(), sz = sizes(vis.length);
-      cards.forEach(function (c) { c.classList.remove("m-l", "m-w", "m-t", "m-s"); });
+    function setSizes(vis, sz) {
+      cards.forEach(function (c) { c.classList.remove("m-sq", "m-st"); c.style.gridRowEnd = ""; });
       vis.forEach(function (c, i) { c.classList.add("m-" + sz[i]); });
+      vis.forEach(function (c) { c.style.gridRowEnd = "span " + Math.ceil(c.offsetHeight); });
     }
+    var curOff = 0;
+    function layout() { var vis = visible(); setSizes(vis, sizes(vis.length, curOff)); }
+    var rt; window.addEventListener("resize", function () { clearTimeout(rt); rt = setTimeout(layout, 120); });
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(layout);
+    layout();
     /* anima a troca de posição e de tamanho das fotos (técnica FLIP) */
     function flip(mutate) {
       var before = {}; visible().forEach(function (c) { before[cards.indexOf(c)] = c.getBoundingClientRect(); });
@@ -199,12 +254,8 @@
         var order = cards.slice().sort(function () { return Math.random() - 0.5; });
         order.forEach(function (c) { grid.appendChild(c); });
         cards = order;
-        /* embaralha também o padrão de tamanhos */
-        var off = Math.floor(Math.random() * PAT.length);
-        var vis = visible(), sz = sizes(vis.length);
-        if (vis.length > 4) { var rot = sz.slice(off).concat(sz.slice(0, off)); sz = rot; }
-        cards.forEach(function (c) { c.classList.remove("m-l", "m-w", "m-t", "m-s"); });
-        vis.forEach(function (c, i) { c.classList.add("m-" + sz[i]); });
+        curOff = Math.floor(Math.random() * pat().length);
+        layout();
       });
       track({ event: "filtro_portfolio", filtro_bairro: "misturar", filtro_tipo: "misturar", resultados: visible().length });
     });
@@ -215,6 +266,16 @@
         chips.forEach(function (x) { x.setAttribute("aria-pressed", x === ch ? "true" : "false"); });
         apply(true);
       });
+    });
+  })();
+
+  /* ---------- mapa: o bairro da lista acende no mapa ---------- */
+  (function () {
+    var mapa = $("#mapa"); if (!mapa) return;
+    $$(".mapa__list li").forEach(function (li) {
+      function on(v) { var g = mapa.querySelector('.mp[data-n="' + li.textContent + '"]'); if (g) g.classList.toggle("on", v); }
+      li.addEventListener("mouseenter", function () { on(true); });
+      li.addEventListener("mouseleave", function () { on(false); });
     });
   })();
 
