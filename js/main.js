@@ -289,9 +289,21 @@
           vp.scrollBy({ left: parseInt(b.getAttribute("data-dir"), 10) * Math.round(vp.clientWidth * 0.7), behavior: reduce ? "auto" : "smooth" });
         });
       });
-      var dn = false, sx = 0, sl = 0;
-      vp.addEventListener("pointerdown", function (e) { if (e.pointerType !== "mouse") return; dn = true; sx = e.clientX; sl = vp.scrollLeft; });
-      window.addEventListener("pointermove", function (e) { if (dn) vp.scrollLeft = sl - (e.clientX - sx); });
+      var dn = false, sx = 0, sl = 0, sy = 0, st = 0;
+      vp.addEventListener("pointerdown", function (e) { if (e.pointerType !== "mouse") return; dn = true; sx = e.clientX; sl = vp.scrollLeft; sy = e.clientY; st = vp.scrollTop; });
+      window.addEventListener("pointermove", function (e) { if (dn) { vp.scrollLeft = sl - (e.clientX - sx); vp.scrollTop = st - (e.clientY - sy); } });
+      /* zoom + e −: amplia o desenho e mantém o centro da área visível */
+      var svg = $(".mapa__svg", vp), z = 1, zb = $$(".mapa__z", mapa);
+      var base = function () { return window.matchMedia("(min-width:960px)").matches ? vp.clientWidth : 1200; };
+      var zoom = function (nz) {
+        nz = Math.max(1, Math.min(3, nz));
+        var cx = (vp.scrollLeft + vp.clientWidth / 2) / vp.scrollWidth, cy = (vp.scrollTop + vp.clientHeight / 2) / vp.scrollHeight;
+        z = nz; svg.style.width = z === 1 ? "" : Math.round(base() * z) + "px"; vp.classList.toggle("zm", z > 1);
+        vp.scrollLeft = cx * vp.scrollWidth - vp.clientWidth / 2; vp.scrollTop = cy * vp.scrollHeight - vp.clientHeight / 2;
+        zb.forEach(function (b) { var d = parseInt(b.getAttribute("data-z"), 10); b.disabled = d > 0 ? z >= 3 : z <= 1; });
+      };
+      zb.forEach(function (b) { b.addEventListener("click", function () { zoom(z + 0.5 * parseInt(b.getAttribute("data-z"), 10)); }); });
+      window.addEventListener("resize", function () { if (z > 1) zoom(z); });
       window.addEventListener("pointerup", function () { dn = false; });
     }
     $$(".mapa__list li").forEach(function (li) {

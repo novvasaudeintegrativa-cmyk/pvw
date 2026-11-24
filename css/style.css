@@ -876,3 +876,12 @@ h1,h2,h3,h4,.shead__h,.hs__head .h2,.band h2,.svb__h{letter-spacing:.02em;text-t
 .bac__im{position:relative;display:block}
 .bac__b{position:absolute;left:1.4%;width:23.4%;height:14.7%;display:flex;align-items:center;justify-content:center;text-align:center;background:#1a45f0;border-radius:6px;color:#fff;font-family:var(--f-t);font-size:clamp(1.2rem,2.4vw,1.75rem);line-height:1;letter-spacing:.04em;text-transform:uppercase;pointer-events:none}
 #antes-depois .h2,#antes-depois .h2 em{color:var(--ink)!important;font-size:clamp(3rem,9vw,5rem)!important;line-height:1}
+.mapa{position:relative}
+.mapa__zoom{position:absolute;top:10px;right:10px;z-index:3;display:flex;flex-direction:column;gap:8px}
+.mapa__z{width:44px;height:44px;border:2px solid var(--ink);background:#fff;color:var(--ink);border-radius:50%;font:400 1.7rem/1 var(--f-t);cursor:pointer;display:grid;place-items:center;padding:0}
+.mapa__z:hover:not(:disabled){background:var(--blue);border-color:var(--blue);color:#fff}
+.mapa__z:disabled{opacity:.35;cursor:default}
+.mapa__vp{overflow:auto}
+.mapa__vp.zm{max-height:80vh;cursor:grab}
+#antes-depois .h2,#antes-depois .h2 em{font-size:clamp(2.2rem,5.6vw,3.6rem)!important}
+.hero .kicker{color:#fff!important}
