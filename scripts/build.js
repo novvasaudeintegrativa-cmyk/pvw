@@ -288,7 +288,7 @@ function home() {
       <div class="chips" id="f-tipos"><button type="button" class="chip" data-tipo="" aria-pressed="true">Todos</button>${tiposUsados.map((t) => `<button type="button" class="chip" data-tipo="${t}" aria-pressed="false">${esc(tipos[t])}</button>`).join("")}</div>
       <button type="button" class="chip chip--sh" id="f-shuffle" aria-label="Misturar a ordem e o tamanho das fotos">Misturar</button>
     </div>
-    <p class="count" id="f-count" role="status" aria-live="polite">${obrasHome.length} obras</p>
+    <p class="count sr-only" id="f-count" role="status" aria-live="polite">${obrasHome.length} obras</p>
     <div class="omos">
       <div class="ogrid" id="ogrid">
         ${obrasHome.map((o, i) => cardObra(o, "", MOSAICO[i % MOSAICO.length])).join("\n        ")}
