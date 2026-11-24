@@ -713,3 +713,18 @@ ul,ol{padding:0;list-style:none}
   .pessoas{width:108%;margin-left:-6%}
   .sec--azul .sobre__txt{position:relative;z-index:2}
 }
+
+/* título do hero menor */
+.hero h1{font-size:clamp(1.9rem,7.4vw,3.4rem);line-height:1.08}
+@media (min-width:960px){.hero h1{font-size:clamp(2.4rem,3.7vw,3.8rem);max-width:760px}}
+
+/* rodapé em azul escuro */
+.ft{background:#14228a;color:#dfe4ff}
+.ft__box{background:#0d1760;border-color:#fff}
+.ft__bar{background:#0d1760}
+.ft__item p,.ft__cols a,.ft__cols p{color:#dfe4ff}
+.ft__dados,.ft__copy{color:#b9c3f5}
+.ft__cols h3{border-bottom-color:#fff}
+.ft__more{border-bottom-color:#fff}
+.ft{display:flow-root;position:relative}
+.ft__box{margin-top:-62px;z-index:2}

@@ -259,25 +259,18 @@ function home() {
       <div class="hero__cta">${waLink("btn--cta btn--lg", "Solicite um orçamento")}<a class="btn btn--ghost btn--lg" href="#obras">Ver obras</a></div>
     </div>
     <div class="hero__phone">
-      <div class="phone" role="group" aria-label="Vídeo da obra do muro de divisa">
+      <div class="phone" role="group" aria-label="Vídeo de uma obra da PVW">
         <span class="phone__btn phone__btn--a" aria-hidden="true"></span><span class="phone__btn phone__btn--b" aria-hidden="true"></span><span class="phone__btn phone__btn--c" aria-hidden="true"></span>
         <div class="phone__screen">
-          <video id="hero-video" muted loop playsinline controls preload="none" poster="img/obras/video-obra-muro.webp" data-src="video/VideoObraMuro.mp4" aria-label="Vídeo da obra do muro de divisa de terreno"></video>
+          <video id="hero-video" muted loop playsinline controls preload="none" poster="img/obras/video-obra-impecavel.webp" data-src="video/VideoObraImpecavel.mp4" aria-label="Vídeo de uma obra da PVW"></video>
           <span class="phone__notch" aria-hidden="true"></span>
           <span class="phone__tag">Obra real</span>
         </div>
       </div>
-      <a class="phone__cap" href="obras/muro-de-divisa/index.html"><span>Muro de divisa de terreno</span><b>Ver obra ${ICONS.arrow}</b></a>
+      <a class="phone__cap" href="#obras"><span>Obra da PVW em andamento</span><b>Ver projetos ${ICONS.arrow}</b></a>
     </div>
   </div>
 </section>
-<div class="area" aria-label="Área de atendimento">
-  <div class="wrap area__in">
-    <p class="area__l">${ICONS.pin}Atendemos ${c.area.regioes.map(esc).join(", ")}</p>
-    <ul class="area__list">${c.area.bairros.map((b) => `<li>${esc(b)}</li>`).join("")}</ul>
-  </div>
-</div>
-
 <section class="sec" id="obras">
   <div class="wrap">
     <div class="shead">
